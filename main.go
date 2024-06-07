@@ -1,16 +1,13 @@
 package main
 
 import (
-	"bytes"
 	"context"
 	"fmt"
-	"io"
 	"log"
 	"net/http"
 	"time"
 
 	"github.com/chromedp/chromedp"
-	"golang.org/x/net/html"
 )
 
 func main() {
@@ -24,21 +21,22 @@ func main() {
 	}
 	defer resp.Body.Close()
 
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		fmt.Println("Error: ", err)
-		return
-	}
+	// body, err := io.ReadAll(resp.Body)
+	// if err != nil {
+	// 	fmt.Println("Error: ", err)
+	// 	return
+	// }
 
-	// fmt.Println(string(body))
-	doc, err := html.Parse(bytes.NewReader(body))
-	if err != nil {
-		fmt.Println("Error parsing HTML:", err)
-		return
+	// // fmt.Println(string(body))
+	// doc, err := html.Parse(bytes.NewReader(body))
+	// if err != nil {
+	// 	fmt.Println("Error parsing HTML:", err)
+	// 	return
+	// }
+	// fmt.Println(doc)
+	for i := 1; i <= 649; i++ {
+		fmt.Println(newChromedp(baseUrl + "#/pokemon/" + fmt.Sprint(i)))
 	}
-	fmt.Print(doc)
-	
-	fmt.Println(newChromedp(baseUrl+"#/pokemon/1"))
 }
 
 func newChromedp(url string) string {
@@ -48,18 +46,22 @@ func newChromedp(url string) string {
 	// to release the browser resources when
 	// it is no longer needed
 	defer cancel()
-
-	var html string
-	err := chromedp.Run(ctx,
+	var html string;
+	// run the automation logic
+	task := chromedp.Tasks{
 		// visit the target page
 		// detail-view-container
 		chromedp.Navigate(url),
+		chromedp.Reload(),
 		// wait for the page to load
-		chromedp.Sleep(10*time.Millisecond),
-		chromedp.WaitVisible(`#detail-view-container`, chromedp.ByID),
+		chromedp.WaitReady(`#detail-view-container`, chromedp.ByID),
+		chromedp.Sleep(1*time.Second),
+		
 		// get the HTML content
-		chromedp.InnerHTML(`#detail-view-container`, &html, chromedp.ByID),
-	)
+		chromedp.OuterHTML(`#detail-view-container h1`, &html, chromedp.ByID),
+	}
+
+	err := chromedp.Run(ctx,task);
 
 	if err != nil {
 		log.Fatal("Error while performing the automation logic:", err)
