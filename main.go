@@ -21,19 +21,6 @@ func main() {
 	}
 	defer resp.Body.Close()
 
-	// body, err := io.ReadAll(resp.Body)
-	// if err != nil {
-	// 	fmt.Println("Error: ", err)
-	// 	return
-	// }
-
-	// // fmt.Println(string(body))
-	// doc, err := html.Parse(bytes.NewReader(body))
-	// if err != nil {
-	// 	fmt.Println("Error parsing HTML:", err)
-	// 	return
-	// }
-	// fmt.Println(doc)
 	for i := 1; i <= 649; i++ {
 		fmt.Println(newChromedp(baseUrl + "#/pokemon/" + fmt.Sprint(i)))
 	}
@@ -58,7 +45,7 @@ func newChromedp(url string) string {
 		chromedp.Sleep(1*time.Second),
 		
 		// get the HTML content
-		chromedp.OuterHTML(`#detail-view-container h1`, &html, chromedp.ByID),
+		chromedp.Text(`#detail-view-container h1`, &html, chromedp.ByID),
 	}
 
 	err := chromedp.Run(ctx,task);
