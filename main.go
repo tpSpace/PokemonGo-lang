@@ -1,43 +1,68 @@
 package main
 
 import (
+	"bytes"
+	"context"
 	"fmt"
-	"sync"
+	"io"
+	"log"
+	"net/http"
+	"time"
 
-	"github.com/gocolly/colly"
+	"github.com/chromedp/chromedp"
+	"golang.org/x/net/html"
 )
 
 func main() {
-	// Initialize a new collector
-	c := colly.NewCollector()
+	baseUrl := "https://pokedex.org/"
+	fmt.Println("Base url: " + baseUrl)
 
-	// Use a wait group to handle multiple requests concurrently
-	var wg sync.WaitGroup
+	resp, err := http.Get(baseUrl)
+	if err != nil {
+		fmt.Println("Error: ", err)
+		return
+	}
+	defer resp.Body.Close()
 
-	// Set up the callback for when the HTML element is found
-	c.OnHTML("h1.detail-panel-header", func(e *colly.HTMLElement) {
-		// Extract the Pokémon name from the <h1> tag
-		pokemonName := e.Text
-		fmt.Println("Pokemon Name:", pokemonName)
-	})
-
-	// Set up the callback for when a request is made
-	c.OnRequest(func(r *colly.Request) {
-		fmt.Println("Visiting", r.URL.String())
-	})
-
-	// Loop over the first 10 Pokémon IDs
-	for i := 1; i <= 10; i++ {
-		wg.Add(1) // Add to the wait group
-		go func(id int) {
-			defer wg.Done() // Mark this goroutine as done in the wait group
-			// Construct the URL
-			url := fmt.Sprintf("https://pokedex.org/#/pokemon/%d", id)
-			// Visit the URL
-			c.Visit(url)
-		}(i)
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("Error: ", err)
+		return
 	}
 
-	// Wait for all goroutines to finish
-	wg.Wait()
+	// fmt.Println(string(body))
+	doc, err := html.Parse(bytes.NewReader(body))
+	if err != nil {
+		fmt.Println("Error parsing HTML:", err)
+		return
+	}
+	fmt.Print(doc)
+	
+	fmt.Println(newChromedp(baseUrl+"#/pokemon/1"))
+}
+
+func newChromedp(url string) string {
+	ctx, cancel := chromedp.NewContext(
+		context.Background(),
+	)
+	// to release the browser resources when
+	// it is no longer needed
+	defer cancel()
+
+	var html string
+	err := chromedp.Run(ctx,
+		// visit the target page
+		// detail-view-container
+		chromedp.Navigate(url),
+		// wait for the page to load
+		chromedp.Sleep(10*time.Millisecond),
+		chromedp.WaitVisible(`#detail-view-container`, chromedp.ByID),
+		// get the HTML content
+		chromedp.InnerHTML(`#detail-view-container`, &html, chromedp.ByID),
+	)
+
+	if err != nil {
+		log.Fatal("Error while performing the automation logic:", err)
+	}
+	return html
 }
