@@ -7,7 +7,6 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/chromedp/cdproto/cdp"
 	"github.com/chromedp/chromedp"
 )
 
@@ -35,7 +34,7 @@ func newChromedp(url string) string {
 	// it is no longer needed
 	defer cancel()
 	var name, index, hp, attack, defense, speed, spAtk, spDef string
-		var types []*cdp.Node
+	var types []string
 	// run the automation logic
 	task := chromedp.Tasks{
 		// visit the target page
@@ -50,8 +49,18 @@ func newChromedp(url string) string {
 		chromedp.Text(`#detail-view-container h1`, &name, chromedp.ByID),
 		// chromedp.Text(".monster-type:nth-of-type(1)", &types, chromedp.NodeVisible),
         // chromedp.Text(".monster-type:nth-of-type(2)", &temp, chromedp.NodeVisible, chromedp.ByQueryAll),
-		// find all the .monster-type elements :nth-of-type(n)
-		chromedp.Nodes(".monster-type", &types, chromedp.ByQueryAll),
+		// find all the .monster-type elements :nth-of-type(n)	
+		chromedp.Evaluate(`(() => {
+            const monsterTypes = document.querySelectorAll('.detail-types > span.monster-type');
+            const visibleMonsterTypes = [];
+            monsterTypes.forEach(type => {
+                const style = window.getComputedStyle(type);
+                if (style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0') {
+                    visibleMonsterTypes.push(type.textContent);
+                }
+            });
+            return visibleMonsterTypes;
+        })()`, &types),
 		
         chromedp.Text(".detail-national-id span", &index),
         chromedp.Text(".detail-stats-row:nth-of-type(1) .stat-bar-fg", &hp),
@@ -64,14 +73,8 @@ func newChromedp(url string) string {
 
 	err := chromedp.Run(ctx,task);
 	fmt.Println("Name:", name)
-    var typez []string
-for i, _ := range types {
-    var text string
-    chromedp.Text(i, &text)
-    typez = append(typez, text)
 	
-}
-	fmt.Println("Types:", typez)
+	fmt.Println("Types:", types)
     fmt.Println("Index:", index)
     fmt.Println("HP:", hp)
     fmt.Println("Attack:", attack)
