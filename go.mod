@@ -3,9 +3,8 @@ module tpSpace/PokemonGo-lang
 go 1.21.10
 
 require (
-	github.com/chromedp/cdproto v0.0.0-20240524221637-55927c2a4565
+	github.com/chromedp/cdproto v0.0.0-20240524221637-55927c2a4565 // indirect
 	github.com/chromedp/chromedp v0.9.5
-	golang.org/x/net v0.25.0
 )
 
 require (

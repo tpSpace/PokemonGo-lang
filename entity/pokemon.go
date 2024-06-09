@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package Pokemon
 
 type Pokemon struct {
 	General           General
@@ -13,7 +11,7 @@ type Pokemon struct {
 type General struct {
 	Index        int
 	Name         string
-	Type         []string
+	Types         []string
 	HP           int
 	Attack       int
 	Defense      int
@@ -35,7 +33,7 @@ type Profile struct {
 }
 
 type DamgeWhenAttacked struct {
-	Ice      float32
+	Ice      float32 
 	Electric float32
 	Fire     float32
 	Water    float32
@@ -59,13 +57,10 @@ type Moves struct {
 	Type              string
 }
 
-func pokemon() {
-	fmt.Println("I choose you, Pikachu!")
-}
-
 // Methods to get Pokemon data from the database
-func GetGeneral(pokemon Pokemon) General {
-	return pokemon.General
+// Create constructor functions to create a new Pokemon
+func GetPokemon() Pokemon {
+	return Pokemon{}
 }
 
 func GetProfile(pokemon Pokemon) Profile {
@@ -82,10 +77,6 @@ func GetEvolutions(pokemon Pokemon) []Evolutions {
 
 func GetMoves(pokemon Pokemon) []Moves {
 	return pokemon.Moves
-}
-
-func GetPokemon(pokemon Pokemon) Pokemon {
-	return pokemon
 }
 
 // create a new Pokemon
