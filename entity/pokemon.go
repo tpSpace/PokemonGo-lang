@@ -18,7 +18,8 @@ type General struct {
 	Speed        int
 	Sp_Atk       int
 	Sp_Def       int
-	Seed_Pokemon string
+	Monster_Species string
+	Monster_Description   string
 }
 
 type Profile struct {

@@ -65,17 +65,15 @@ func newChromedp(url string) Pokemon.Pokemon {
             });
             return visibleMonsterTypes;
         })()`, &pokemon.General.Types),
-        
-		// convert the text to an integer using js
-		chromedp.Evaluate(`parseInt(document.querySelector(".detail-stats-row:nth-of-type(2) .stat-bar-fg").textContent)`, &pokemon.General.Attack, chromedp.EvalAsValue),
-		
-
+		// get the text content of the element
 		chromedp.ActionFunc(func (ctx context.Context) error {
 			var temp string
 						
 			chromedp.Text(".detail-national-id span", &temp, chromedp.ByQuery).Do(ctx)
 			// the index is in the format #001 therefore we have to slice the first character
 			pokemon.General.Index, _ = strconv.Atoi(temp[1:])
+			// convert the text to an integer using js
+			chromedp.Evaluate(`parseInt(document.querySelector(".detail-stats-row:nth-of-type(2) .stat-bar-fg").textContent)`, &pokemon.General.Attack, chromedp.EvalAsValue).Do(ctx)
         	chromedp.Text(".detail-stats-row:nth-of-type(1) .stat-bar-fg", &temp).Do(ctx)
 			pokemon.General.HP, _ = strconv.Atoi(temp)
 			chromedp.Text(".detail-stats-row:nth-of-type(3) .stat-bar-fg", &temp).Do(ctx)
@@ -86,7 +84,9 @@ func newChromedp(url string) Pokemon.Pokemon {
 			pokemon.General.Sp_Atk, _ = strconv.Atoi(temp)
 			chromedp.Text(".detail-stats-row:nth-of-type(6) .stat-bar-fg", &temp).Do(ctx)
 			pokemon.General.Sp_Def, _ = strconv.Atoi(temp)
-
+			chromedp.Text(".detail-below-header .monster-species", &pokemon.General.Monster_Species).Do(ctx)
+			chromedp.Text(".detail-below-header .monster-description", &pokemon.General.Monster_Description).Do(ctx)
+			
 			return nil
 		}),
 
