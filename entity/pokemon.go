@@ -31,16 +31,6 @@ type Profile struct {
 	Hatch_Steps  int
 	Abilities    []string
 	EVs          []string
-
-	// Height       string // meter
-	// Weight       string // kilogram
-	// Catch_Rate   string // 0.0%
-	// Gender_Ratio string // 0.0%
-	// Egg_Groups   string
-	// Hatch_Steps  string
-	// Abilities    string
-	// EVs          string
-	// Test 	   []string
 }
 
 type DamgeWhenAttacked struct {

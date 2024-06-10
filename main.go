@@ -94,7 +94,6 @@ func newChromedp(url string) Pokemon.Pokemon {
 			pokemon.General.Sp_Def, _ = strconv.Atoi(temp)
 			chromedp.Text(".detail-below-header .monster-species", &pokemon.General.Monster_Species).Do(ctx)
 			chromedp.Text(".detail-below-header .monster-description", &pokemon.General.Monster_Description).Do(ctx)
-			fmt.Println("hii")
 			
 			// get the profile data
 			// chromedp.Text(".detail-below-header .monster-minutia", &temp, chromedp.ByQueryAll).Do(ctx)
@@ -150,6 +149,65 @@ func newChromedp(url string) Pokemon.Pokemon {
 				}
 				count++				
 			}
+			// get the damge when attacked data
+
+			const getDamageMultipliersScript = `(function() {
+				var multipliers = [];
+				var rows = document.querySelectorAll(".when-attacked-row");
+				rows.forEach(function(row) {
+					var typeElements = row.querySelectorAll(".monster-type");
+					var multiplierElements = row.querySelectorAll(".monster-multiplier");
+					for (var i = 0; i < typeElements.length; i++) {
+						var type = typeElements[i].innerText;
+						var multiplier = parseFloat(multiplierElements[i].innerText.replace("x", ""));
+						multipliers.push({Type: type, Multipler: multiplier});
+					}
+				});
+				return multipliers;
+			})();`
+			// Wait for the element to be visible
+		chromedp.WaitVisible(".when-attacked")
+
+		// Query for the damage multipliers and populate the struct
+		chromedp.ActionFunc(func(ctx context.Context) error {
+			var multipliers []struct {
+				Type      string
+				Multipler float32
+			}
+			err := chromedp.Evaluate(getDamageMultipliersScript, &multipliers).Do(ctx)
+			if err != nil {
+				return err
+			}
+			// fmt.Println(multipliers)
+			for _, multiplier := range multipliers {
+				switch multiplier.Type {
+				case "ice":
+					// remove "x"
+					pokemon.DamgeWhenAttacked.Ice = multiplier.Multipler
+				case "electric":
+					pokemon.DamgeWhenAttacked.Electric = multiplier.Multipler
+				case "fire":
+					pokemon.DamgeWhenAttacked.Fire = multiplier.Multipler
+				case "water":
+					pokemon.DamgeWhenAttacked.Water = multiplier.Multipler
+				case "flying":
+					pokemon.DamgeWhenAttacked.Flying = multiplier.Multipler
+				case "fairy":
+					pokemon.DamgeWhenAttacked.Fairy = multiplier.Multipler
+				case "psychic":
+					pokemon.DamgeWhenAttacked.Psychic = multiplier.Multipler
+				case "fighting":
+					pokemon.DamgeWhenAttacked.Fighting = multiplier.Multipler
+				case "ground":
+					pokemon.DamgeWhenAttacked.Ground = multiplier.Multipler
+				case "grass":
+					pokemon.DamgeWhenAttacked.Grass = multiplier.Multipler
+				}
+			}
+			return nil
+		}).Do(ctx)
+
+
 			return nil
 		}),
 		
