@@ -54,7 +54,7 @@ func newChromedp(url string) Pokemon.Pokemon {
 		chromedp.Reload(),
 		// wait for the page to load
 		chromedp.WaitReady(`#detail-view-container`, chromedp.ByID),
-		chromedp.Sleep(200*time.Millisecond),
+		chromedp.Sleep(100*time.Millisecond),
 		
 		// get the HTML content
 		chromedp.Text(`#detail-view-container h1`, &pokemon.General.Name, chromedp.ByID),
@@ -97,10 +97,10 @@ func newChromedp(url string) Pokemon.Pokemon {
 			
 			// get the profile data
 			// chromedp.Text(".detail-below-header .monster-minutia", &temp, chromedp.ByQueryAll).Do(ctx)
-			
+			chromedp.WaitVisible(".detail-view-fg .mui-panel .detail-panel-content .detail-below-header .monster-minutia span")
 			chromedp.Nodes(`#detail-view .detail-view-fg .mui-panel .detail-panel-content .detail-below-header .monster-minutia span`, &temp2, chromedp.ByQueryAll).Do(ctx)
 			var count = 0
-
+			
 			for _, node := range temp2 {
 				switch count {
 				case 0:
@@ -201,7 +201,26 @@ func newChromedp(url string) Pokemon.Pokemon {
 					pokemon.DamgeWhenAttacked.Ground = multiplier.Multipler
 				case "grass":
 					pokemon.DamgeWhenAttacked.Grass = multiplier.Multipler
+				case "rock":
+					pokemon.DamgeWhenAttacked.Rock = multiplier.Multipler
+				case "steel":
+					pokemon.DamgeWhenAttacked.Steel = multiplier.Multipler
+				case "poison":
+					pokemon.DamgeWhenAttacked.Poison = multiplier.Multipler
+				case "ghost":
+					pokemon.DamgeWhenAttacked.Ghost = multiplier.Multipler
+				case "dark":
+					pokemon.DamgeWhenAttacked.Dark = multiplier.Multipler
+				case "dragon":
+					pokemon.DamgeWhenAttacked.Dragon = multiplier.Multipler
+				case "bug":
+					pokemon.DamgeWhenAttacked.Bug = multiplier.Multipler
+				case "normal":
+					pokemon.DamgeWhenAttacked.Normal = multiplier.Multipler
+				default:
+					fmt.Println("Error: ", multiplier.Type)
 				}
+			
 			}
 			return nil
 		}).Do(ctx)

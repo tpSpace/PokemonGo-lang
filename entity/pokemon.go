@@ -44,6 +44,14 @@ type DamgeWhenAttacked struct {
 	Fighting float32
 	Ground   float32
 	Grass    float32
+	Rock	 float32
+	Steel   float32
+	Poison  float32
+	Ghost   float32
+	Dark   float32
+	Dragon float32
+	Bug   float32
+	Normal float32
 }
 
 type Evolutions struct {
@@ -55,9 +63,15 @@ type Evolutions struct {
 type Moves struct {
 	DamgeWhenAttacked int // if the this damge is unknow than the value is -1 as default
 	Move              string
-	Type              string
+	Type              Type
 }
 
+type Type struct {
+	Power int32 // -1 as N/A
+	Acc int32
+	PP int32
+	Description string
+}
 // Methods to get Pokemon data from the database
 // Create constructor functions to create a new Pokemon
 func GetPokemon() Pokemon {
