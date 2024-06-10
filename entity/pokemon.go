@@ -5,7 +5,9 @@ type Pokemon struct {
 	Profile           Profile
 	DamgeWhenAttacked DamgeWhenAttacked
 	Evolutions        []Evolutions
-	Moves             []Moves
+	Natural_Moves	 []Natural_Moves
+	Machine_Move	 []Machine_Move
+	Tutor_Move		 []Tutor_Move
 }
 
 type General struct {
@@ -60,16 +62,26 @@ type Evolutions struct {
 	To    string
 }
 
-type Moves struct {
+type Natural_Moves struct {
 	DamgeWhenAttacked int // if the this damge is unknow than the value is -1 as default
 	Move              string
 	Type              Type
 }
 
+type Machine_Move struct {
+	Move string
+	Type Type
+}
+
+type Tutor_Move struct {
+	Move string
+	Type Type
+}
+
 type Type struct {
 	Power int32 // -1 as N/A
-	Acc int32
-	PP int32
+	Acc int32	// -1 as N/A
+	PP int32	// -1 as N/A
 	Description string
 }
 // Methods to get Pokemon data from the database
@@ -90,17 +102,3 @@ func GetEvolutions(pokemon Pokemon) []Evolutions {
 	return pokemon.Evolutions
 }
 
-func GetMoves(pokemon Pokemon) []Moves {
-	return pokemon.Moves
-}
-
-// create a new Pokemon
-func NewPokemon(general General, profile Profile, damgeWhenAttacked DamgeWhenAttacked, evolutions []Evolutions, moves []Moves) Pokemon {
-	return Pokemon{
-		General:           general,
-		Profile:           profile,
-		DamgeWhenAttacked: damgeWhenAttacked,
-		Evolutions:        evolutions,
-		Moves:             moves,
-	}
-}
