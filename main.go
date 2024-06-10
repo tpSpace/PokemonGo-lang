@@ -5,7 +5,9 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"regexp"
 	"strconv"
+	"strings"
 	"time"
 	Pokemon "tpSpace/PokemonGo-lang/entity"
 
@@ -98,33 +100,55 @@ func newChromedp(url string) Pokemon.Pokemon {
 			// chromedp.Text(".detail-below-header .monster-minutia", &temp, chromedp.ByQueryAll).Do(ctx)
 			
 			chromedp.Nodes(`#detail-view .detail-view-fg .mui-panel .detail-panel-content .detail-below-header .monster-minutia span`, &temp2, chromedp.ByQueryAll).Do(ctx)
-			// go through temp2 and get the profile data
-			// for _, node := range temp2 {
-				
-			// 	// get the children of the node
-			// 	for i := int64(0); i < node.ChildNodeCount; i++ {
-					
-			// 		// class, ok := node.Children[0].Attribute("class")
-			// 		// if ok && class == "monster-minutia" {
-						
-			// 		// }
-			// 		// text := node.Children[i].Children[0].NodeValue
-			// 		// 	fmt.Println(text)
-			// 		// check if class is monster-minutia
-			// 		class, ok := node.Children[i].Attribute("class")
-			// 		if class == "monster-minutia" && ok {
-			// 			for _, child := range node.Children[i].Children {
-			// 				if child.NodeType == 3 { // Node.TEXT_NODE
-			// 					text := child.NodeValue
-			// 					fmt.Println(text)
-			// 				}
-			// 			}
-			// 		}
-			// 	}
-			// }
+			var count = 0
+
 			for _, node := range temp2 {
-				text := node.Children[0].NodeValue
-				fmt.Println(text)
+				switch count {
+				case 0:
+					// trim the text to get the value
+					re := regexp.MustCompile(`[0-9.]+`)
+					valueStr := re.FindString(node.Children[0].NodeValue)
+					value, _ := strconv.ParseFloat(valueStr, 32)
+					pokemon.Profile.Height = float32(value)
+				case 1:
+					re := regexp.MustCompile(`[0-9.]+`)
+					valueStr := re.FindString(node.Children[0].NodeValue)
+					value, _ := strconv.ParseFloat(valueStr, 32)
+					pokemon.Profile.Weight = float32(value)
+				case 2:
+					re := regexp.MustCompile(`[0-9.]+`)
+					valueStr := re.FindString(node.Children[0].NodeValue)
+					value, _ := strconv.ParseFloat(valueStr, 32)
+					
+					pokemon.Profile.Catch_Rate = float32(value)
+				case 3:
+					re := regexp.MustCompile(`(\d+(\.\d+)?)%`)
+					matches := re.FindAllString(node.Children[0].NodeValue, -1)
+
+					for _, match := range matches {
+						valueStr := strings.TrimSuffix(match, "%")
+						value, _ := strconv.ParseFloat(valueStr, 32)
+						pokemon.Profile.Gender_Ratio = append(pokemon.Profile.Gender_Ratio, float32(value))
+					}
+				case 4:
+					re := regexp.MustCompile(`[a-zA-Z]+`)
+					matches := re.FindAllString(node.Children[0].NodeValue, -1)
+					pokemon.Profile.Egg_Groups = append(pokemon.Profile.Egg_Groups, matches...)
+				case 5:
+					pokemon.Profile.Hatch_Steps, _ = strconv.Atoi(node.Children[0].NodeValue)
+				case 6:
+					re := regexp.MustCompile(`[a-zA-Z]+`)
+					matches := re.FindAllString(node.Children[0].NodeValue, -1)
+					pokemon.Profile.Abilities = append(pokemon.Profile.Abilities, matches...)
+				case 7:
+					// split the string by "," and then trim the string to get the value the substring may have space between the characters
+					for _, value := range strings.Split(node.Children[0].NodeValue, ",") {
+						pokemon.Profile.EVs = append(pokemon.Profile.EVs, strings.TrimSpace(value))
+					}
+				default: 
+					fmt.Println("Error: ", node.Children[0].NodeValue)
+				}
+				count++				
 			}
 			return nil
 		}),
