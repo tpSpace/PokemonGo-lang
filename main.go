@@ -182,7 +182,6 @@ func newChromedp(url string) Pokemon.Pokemon {
 			for _, multiplier := range multipliers {
 				switch multiplier.Type {
 				case "ice":
-					// remove "x"
 					pokemon.DamgeWhenAttacked.Ice = multiplier.Multipler
 				case "electric":
 					pokemon.DamgeWhenAttacked.Electric = multiplier.Multipler
@@ -206,8 +205,35 @@ func newChromedp(url string) Pokemon.Pokemon {
 			}
 			return nil
 		}).Do(ctx)
-
-
+		// get the evolutions data
+		const getEvolutionsScript = `(function() {
+			const data = [];
+			document.querySelectorAll('.evolution-label').forEach(el => {
+				const text = el.innerText;
+				const from = text.split(' evolves into ')[0].trim();
+				const to = text.split(' evolves into ')[1].split(' at level ')[0].trim();
+				const level = parseInt(text.split(' at level ')[1].trim());
+				data.push({ from, to, level });
+			});
+			return data;
+		})();`
+		// Wait for the element to be visible
+		chromedp.WaitVisible(".evolution-row")
+		var evolutions []struct {
+			Level int
+			From  string
+			To    string
+		}
+		
+		chromedp.Evaluate(getEvolutionsScript, &evolutions).Do(ctx)
+		for _, evolution := range evolutions {
+			pokemon.Evolutions = append(pokemon.Evolutions, Pokemon.Evolutions{
+				Level: evolution.Level,
+				From:  evolution.From,
+				To:    evolution.To,
+			})
+		}
+		
 			return nil
 		}),
 		
