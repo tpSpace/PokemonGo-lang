@@ -11,6 +11,7 @@ import (
 
 	// "tpSpace/PokemonGo-lang/entity/pokemon"
 
+	"github.com/chromedp/cdproto/cdp"
 	"github.com/chromedp/chromedp"
 )
 
@@ -41,7 +42,8 @@ func newChromedp(url string) Pokemon.Pokemon {
 	defer cancel()
 
 	var pokemon = Pokemon.GetPokemon()
-	
+	var temp string
+	var temp2 []*cdp.Node
 	// run the automation logic
 	task := chromedp.Tasks{
 		// visit the target page
@@ -50,7 +52,7 @@ func newChromedp(url string) Pokemon.Pokemon {
 		chromedp.Reload(),
 		// wait for the page to load
 		chromedp.WaitReady(`#detail-view-container`, chromedp.ByID),
-		chromedp.Sleep(100*time.Millisecond),
+		chromedp.Sleep(200*time.Millisecond),
 		
 		// get the HTML content
 		chromedp.Text(`#detail-view-container h1`, &pokemon.General.Name, chromedp.ByID),
@@ -65,10 +67,14 @@ func newChromedp(url string) Pokemon.Pokemon {
             });
             return visibleMonsterTypes;
         })()`, &pokemon.General.Types),
+		// get the profile data
+		
+		
 		// get the text content of the element
 		chromedp.ActionFunc(func (ctx context.Context) error {
-			var temp string
+			
 						
+			// get the general data
 			chromedp.Text(".detail-national-id span", &temp, chromedp.ByQuery).Do(ctx)
 			// the index is in the format #001 therefore we have to slice the first character
 			pokemon.General.Index, _ = strconv.Atoi(temp[1:])
@@ -86,12 +92,45 @@ func newChromedp(url string) Pokemon.Pokemon {
 			pokemon.General.Sp_Def, _ = strconv.Atoi(temp)
 			chromedp.Text(".detail-below-header .monster-species", &pokemon.General.Monster_Species).Do(ctx)
 			chromedp.Text(".detail-below-header .monster-description", &pokemon.General.Monster_Description).Do(ctx)
+			fmt.Println("hii")
 			
+			// get the profile data
+			// chromedp.Text(".detail-below-header .monster-minutia", &temp, chromedp.ByQueryAll).Do(ctx)
+			
+			chromedp.Nodes(`#detail-view .detail-view-fg .mui-panel .detail-panel-content .detail-below-header .monster-minutia span`, &temp2, chromedp.ByQueryAll).Do(ctx)
+			// go through temp2 and get the profile data
+			// for _, node := range temp2 {
+				
+			// 	// get the children of the node
+			// 	for i := int64(0); i < node.ChildNodeCount; i++ {
+					
+			// 		// class, ok := node.Children[0].Attribute("class")
+			// 		// if ok && class == "monster-minutia" {
+						
+			// 		// }
+			// 		// text := node.Children[i].Children[0].NodeValue
+			// 		// 	fmt.Println(text)
+			// 		// check if class is monster-minutia
+			// 		class, ok := node.Children[i].Attribute("class")
+			// 		if class == "monster-minutia" && ok {
+			// 			for _, child := range node.Children[i].Children {
+			// 				if child.NodeType == 3 { // Node.TEXT_NODE
+			// 					text := child.NodeValue
+			// 					fmt.Println(text)
+			// 				}
+			// 			}
+			// 		}
+			// 	}
+			// }
+			for _, node := range temp2 {
+				text := node.Children[0].NodeValue
+				fmt.Println(text)
+			}
 			return nil
 		}),
-
+		
 	}
-
+	
 	err := chromedp.Run(ctx,task);
 	if err != nil {
 		log.Fatal("Error while performing the automation logic:", err)
