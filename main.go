@@ -35,10 +35,16 @@ func main() {
 
 func newChromedp(url string) Pokemon.Pokemon {
 	// open the browser
-
-	ctx, cancel := chromedp.NewContext(
-		context.Background(),
+	opts := append(chromedp.DefaultExecAllocatorOptions[:],
+		// chromedp.Flag("headless", false),
+		chromedp.Flag("disable-gpu", false),
 	)
+	allocCtx, cancel := chromedp.NewExecAllocator(context.Background(), opts...)
+	defer cancel()
+	// create a new context
+
+	ctx, cancel := chromedp.NewContext(allocCtx)
+	defer cancel()
 	// to release the browser resources when
 	// it is no longer needed
 	defer cancel()
@@ -237,7 +243,7 @@ func newChromedp(url string) Pokemon.Pokemon {
 			return data;
 		})();`
 		// Wait for the element to be visible
-		// chromedp.WaitVisible(".evolution-row")
+		chromedp.WaitVisible(".evolution-row")
 		var evolutions []struct {
 			Level int
 			From  string
@@ -255,7 +261,8 @@ func newChromedp(url string) Pokemon.Pokemon {
 		fmt.Println("Hello world")
 			return nil
 		}),
-		
+		// chromedp.Sleep(5 * time.Second),
+		chromedp.WaitVisible(`div.monster-moves .moves-row`),    // Wait for the moves container to be visible
 		// get the natural moves data
 		chromedp.ActionFunc(func(ctx context.Context) error {
 			var movesData []struct {
@@ -267,6 +274,7 @@ func newChromedp(url string) Pokemon.Pokemon {
 				PP          string
 				Description string
 			}
+			
 			chromedp.WaitVisible(`div.monster-moves .moves-row`) // Wait for the moves container to be visible
 			chromedp.Evaluate(`
 			(function() {
@@ -313,4 +321,10 @@ func newChromedp(url string) Pokemon.Pokemon {
 
 	
 	return pokemon
+}
+func removePrefix(s, prefix string) string {
+    if strings.HasPrefix(s, prefix) {
+        return strings.TrimPrefix(s, prefix)
+    }
+    return s
 }
