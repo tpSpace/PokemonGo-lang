@@ -1,13 +1,13 @@
 package Pokemon
 
 type Pokemon struct {
-	General           General
-	Profile           Profile
-	DamgeWhenAttacked DamgeWhenAttacked
-	Evolutions        []Evolutions
-	Natural_Moves	 []Natural_Moves
-	Machine_Move	 []Machine_Move
-	Tutor_Move		 []Tutor_Move
+	General           General `json:"General"`
+	Profile           Profile	`json:"Profile"`
+	DamgeWhenAttacked DamgeWhenAttacked	`json:"DamgeWhenAttacked"`
+	Evolutions        []Evolutions `json:"Evolutions"`
+	Natural_Moves	 []Natural_Moves `json:"Natural_Moves"`
+	Machine_Move	 []Machine_Move `json:"Machine_Move"`
+	Tutor_Move		 []Tutor_Move `json:"Tutor_Move"`
 }
 
 type General struct {
@@ -63,7 +63,7 @@ type Evolutions struct {
 }
 
 type Natural_Moves struct {
-	DamgeWhenAttacked int // if the this damge is unknow than the value is -1 as default
+	Index int // if the this damge is unknow than the value is -1 as default
 	Move              string
 	Type              Type
 }
@@ -79,9 +79,9 @@ type Tutor_Move struct {
 }
 
 type Type struct {
-	Power int32 // -1 as N/A
-	Acc int32	// -1 as N/A
-	PP int32	// -1 as N/A
+	Power int // -1 as N/A
+	Acc int	// -1 as N/A
+	PP int	// -1 as N/A
 	Description string
 }
 // Methods to get Pokemon data from the database

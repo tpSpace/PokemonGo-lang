@@ -2,9 +2,11 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"regexp"
 	"strconv"
 	"strings"
@@ -25,10 +27,29 @@ func main() {
 		return
 	}
 	defer resp.Body.Close()
-
-	for i := 1; i <= 649; i++ {
-		go fmt.Println(newChromedp(baseUrl + "#/pokemon/" + fmt.Sprint(i)))
+	var pokemon []Pokemon.Pokemon
+	for i := 1; i <= 3; i++ { //649
+		pokedex := newChromedp(baseUrl + "#/pokemon/" + fmt.Sprint(i))
+		// save the data to the pokedex.json as a json file
+		fmt.Println(pokedex)
+		pokemon = append(pokemon, pokedex)
+		// save pokemon data to the pokedex.json file as a json file
+		// cod
+		
 	}
+	pokedexJson, err := json.MarshalIndent(pokemon, "", " ")
+    if err != nil {
+        fmt.Println("Error: ", err)
+        return
+    }
+
+    // Write the JSON data to the pokedex.json file in correct format and with proper indentation
+	
+    err = os.WriteFile("pokedex.json", pokedexJson, 0644)
+    if err != nil {
+        fmt.Println("Error: ", err)
+        return
+    }
 	// write a function to get the pokemon data with concurrency
 	
 }
@@ -308,7 +329,33 @@ func newChromedp(url string) Pokemon.Pokemon {
 				return data;
 			})();
 		`, &movesData, chromedp.EvalAsValue).Do(ctx)
-			fmt.Println(movesData)
+		// fmt.Println(movesData)
+			// now map it to Pokemon.Natural_Moves
+			// convert data to 
+			for _, move := range movesData {
+				// iterate through the move data and fix if the value is not a number then set it to -1 
+				var moveData Pokemon.Natural_Moves
+				if move.Power == "" || move.Power == "N/A" {
+					moveData.Type.Power = -1
+				} else {
+					moveData.Type.Power, _ = strconv.Atoi(move.Power)
+				}
+				if move.Accuracy == "" || move.Accuracy == "N/A" {
+					moveData.Type.Acc = -1
+				} else {
+					// remove % from the string
+					moveData.Type.Acc, _ = strconv.Atoi(strings.TrimSuffix(move.Accuracy, "%"))
+				}
+				if move.PP == "" || move.PP == "N/A" {
+					moveData.Type.PP = -1
+				} else {
+					moveData.Type.PP, _ = strconv.Atoi(move.PP)
+				}
+				moveData.Index, _ = strconv.Atoi(move.Level)
+				moveData.Move = move.Name
+				moveData.Type.Description = move.Description
+				pokemon.Natural_Moves = append(pokemon.Natural_Moves, moveData)
+			}
 			return nil
 		}),
 		
@@ -321,10 +368,4 @@ func newChromedp(url string) Pokemon.Pokemon {
 
 	
 	return pokemon
-}
-func removePrefix(s, prefix string) string {
-    if strings.HasPrefix(s, prefix) {
-        return strings.TrimPrefix(s, prefix)
-    }
-    return s
 }
