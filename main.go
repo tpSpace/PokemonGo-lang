@@ -11,8 +11,6 @@ import (
 	"time"
 	Pokemon "tpSpace/PokemonGo-lang/entity"
 
-	// "tpSpace/PokemonGo-lang/entity/pokemon"
-
 	"github.com/chromedp/cdproto/cdp"
 	"github.com/chromedp/chromedp"
 )
@@ -31,11 +29,13 @@ func main() {
 	for i := 1; i <= 649; i++ {
 		go fmt.Println(newChromedp(baseUrl + "#/pokemon/" + fmt.Sprint(i)))
 	}
-	// write a function to get the pokemon data with concurrencyq
-
+	// write a function to get the pokemon data with concurrency
+	
 }
 
 func newChromedp(url string) Pokemon.Pokemon {
+	// open the browser
+
 	ctx, cancel := chromedp.NewContext(
 		context.Background(),
 	)
@@ -237,13 +237,13 @@ func newChromedp(url string) Pokemon.Pokemon {
 			return data;
 		})();`
 		// Wait for the element to be visible
-		chromedp.WaitVisible(".evolution-row")
+		// chromedp.WaitVisible(".evolution-row")
 		var evolutions []struct {
 			Level int
 			From  string
 			To    string
 		}
-		
+		// Query for the evolutions and populate the struct
 		chromedp.Evaluate(getEvolutionsScript, &evolutions).Do(ctx)
 		for _, evolution := range evolutions {
 			pokemon.Evolutions = append(pokemon.Evolutions, Pokemon.Evolutions{
@@ -252,7 +252,55 @@ func newChromedp(url string) Pokemon.Pokemon {
 				To:    evolution.To,
 			})
 		}
+		fmt.Println("Hello world")
+			return nil
+		}),
 		
+		// get the natural moves data
+		chromedp.ActionFunc(func(ctx context.Context) error {
+			var movesData []struct {
+				Level       string
+				Name        string
+				Type        string
+				Power       string
+				Accuracy    string
+				PP          string
+				Description string
+			}
+			chromedp.WaitVisible(`div.monster-moves .moves-row`) // Wait for the moves container to be visible
+			chromedp.Evaluate(`
+			(function() {
+				const rows = document.querySelectorAll('div.monster-moves .moves-row');
+				let data = [];
+				rows.forEach(row => {
+					const move = {};
+					move.level = row.querySelector('.moves-inner-row > span:nth-child(1)').innerText;
+					move.name = row.querySelector('.moves-inner-row > span:nth-child(2)').innerText;
+					move.type = row.querySelector('.moves-inner-row > span.monster-type').innerText;
+					const stats = row.querySelector('.moves-row-detail .moves-row-stats');
+					if (stats) {
+						move.power = stats.querySelector('span:nth-child(1)').innerText.split(': ')[1];
+						move.accuracy = stats.querySelector('span:nth-child(2)').innerText.split(': ')[1];
+						move.pp = stats.querySelector('span:nth-child(3)').innerText.split(': ')[1];
+					}
+					const description = row.querySelector('.moves-row-detail .move-description');
+					if (description) {
+						move.description = description.innerText;
+					}
+					data.push({
+						Level: move.level,
+						Name: move.name,
+						Type: move.type,
+						Power: move.power,
+						Accuracy: move.accuracy,
+						PP: move.pp,
+						Description: move.description
+					});
+				});
+				return data;
+			})();
+		`, &movesData, chromedp.EvalAsValue).Do(ctx)
+			fmt.Println(movesData)
 			return nil
 		}),
 		
@@ -262,5 +310,7 @@ func newChromedp(url string) Pokemon.Pokemon {
 	if err != nil {
 		log.Fatal("Error while performing the automation logic:", err)
 	}
+
+	
 	return pokemon
 }
