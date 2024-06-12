@@ -1,4 +1,4 @@
-package Pokemon
+package Entity
 
 type Pokemon struct {
 	General           General `json:"General"`

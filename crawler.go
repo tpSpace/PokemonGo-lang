@@ -18,7 +18,7 @@ import (
 	"github.com/chromedp/chromedp"
 )
 
-func main() {
+func Crawler(first int, last int) {
 	baseUrl := "https://pokedex.org/"
 	fmt.Println("Base url: " + baseUrl)
 
@@ -54,14 +54,14 @@ func main() {
 		file.Seek(-1, io.SeekEnd)
 	}
 
-	for i := 62; i <= 649; i++ {
+	for i := first; i <= last; i++ {
 		pokedex := newChromedp(baseUrl + "#/pokemon/" + strconv.Itoa(i))
 		
 		// Delay the request to avoid being blocked
 		time.Sleep(1 * time.Second)
 		
 		// Print the Pokémon's name for debugging purposes
-		fmt.Println(pokedex.General.Name)
+		fmt.Println(strconv.Itoa(pokedex.General.Index)+" "+pokedex.General.Name)
 		
 		// Marshal the Pokémon data to JSON
 		pokedexJson, err := json.MarshalIndent(pokedex, " ", "  ")
@@ -101,7 +101,7 @@ func main() {
 func newChromedp(url string) Pokemon.Pokemon {
 	// open the browser
 	opts := append(chromedp.DefaultExecAllocatorOptions[:],
-		chromedp.Flag("headless", false),
+		// chromedp.Flag("headless", false),
 		chromedp.Flag("disable-gpu", true),
 	)
 	allocCtx, cancel := chromedp.NewExecAllocator(context.Background(), opts...)
@@ -238,6 +238,7 @@ func newChromedp(url string) Pokemon.Pokemon {
 				return multipliers;
 			})();`
 			// Wait for the element to be visible
+			chromedp.Reload()
 		chromedp.WaitVisible(".when-attacked")
 
 		// Query for the damage multipliers and populate the struct
@@ -328,6 +329,7 @@ func newChromedp(url string) Pokemon.Pokemon {
 			return nil
 		}),
 		// chromedp.Sleep(5 * time.Second),
+		chromedp.Reload(),
 		chromedp.Sleep(1000*time.Millisecond),
 		chromedp.WaitVisible(`div.monster-moves .moves-row`),    // Wait for the moves container to be visible
 		// get the natural moves data
