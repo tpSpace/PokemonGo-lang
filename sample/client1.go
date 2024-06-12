@@ -23,9 +23,42 @@ func main() {
 	go listenUdp()
 	go broadCasting()
 	
+	ln, err := net.Listen("tcp", ":" + tcpPort)
+	if err != nil {
+		panic(err)
+	}
+	defer ln.Close()
 
+	for {
+		conn, err := ln.Accept()
+		if err != nil {
+			panic(err)
+		}
+		game.players = append(game.players, conn)
+		go game.handleConnection(conn)
+	}
 
 }
+
+func (game *Game) handleConnection(conn net.Conn) {
+	for {
+		buffer := make([]byte, 1024)
+		n, err := conn.Read(buffer)
+		if err != nil {
+			fmt.Println("Error reading: ", err)
+			return
+		}
+		message := string(buffer[:n])
+		fmt.Println("Received: ", message)
+		game.mutex.Lock()
+		if conn == game.players[game.currentTurn] {
+			game.currentTurn = (game.currentTurn + 1) % len(game.players)
+			game.players[game.currentTurn].Write([]byte(message))
+		}
+		game.mutex.Unlock()
+	}
+}
+
 
 func broadCasting(connectionInfo string) {
 	conn, err := net.DialUDP("udp", nil, &net.UDPAddr{
