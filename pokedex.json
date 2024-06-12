@@ -3075,4 +3075,4322 @@
    ],
    "Machine_Move": null,
    "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 35,
+     "Name": "Clefairy",
+     "Types": [
+       "fairy"
+     ],
+     "HP": 70,
+     "Attack": 45,
+     "Defense": 48,
+     "Speed": 35,
+     "Sp_Atk": 60,
+     "Sp_Def": 65,
+     "Monster_Species": "Fairy Pokémon",
+     "Monster_Description": "On nights with a full moon, Clefairy gather from all over and dance. Bathing in moonlight makes them float."
+   },
+   "Profile": {
+     "Height": 0.6,
+     "Weight": 7.5,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       25,
+       75
+     ],
+     "Egg_Groups": [
+       "Fairy"
+     ],
+     "Hatch_Steps": 2550,
+     "Abilities": [
+       "Cute",
+       "charm",
+       "Magic",
+       "guard",
+       "Friend",
+       "guard"
+     ],
+     "EVs": [
+       "2 HP"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0,
+     "Electric": 0,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 0.5,
+     "Ground": 0,
+     "Grass": 0,
+     "Rock": 0,
+     "Steel": 2,
+     "Poison": 2,
+     "Ghost": 0,
+     "Dark": 0.5,
+     "Dragon": 0,
+     "Bug": 0.5,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Growl",
+       "Type": {
+         "Power": -1,
+         "Acc": 100,
+         "PP": 40,
+         "Description": "Lowers the target's Attack by one stage."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Pound",
+       "Type": {
+         "Power": 40,
+         "Acc": 100,
+         "PP": 35,
+         "Description": "Inflicts regular damage."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 36,
+     "Name": "Clefable",
+     "Types": [
+       "fairy"
+     ],
+     "HP": 95,
+     "Attack": 70,
+     "Defense": 73,
+     "Speed": 60,
+     "Sp_Atk": 95,
+     "Sp_Def": 90,
+     "Monster_Species": "Fairy Pokémon",
+     "Monster_Description": "Their ears are sensitive enough to hear a pin drop from over a mile away, so theyre usually found in quiet places."
+   },
+   "Profile": {
+     "Height": 1.3,
+     "Weight": 40,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       25,
+       75
+     ],
+     "Egg_Groups": [
+       "Fairy"
+     ],
+     "Hatch_Steps": 2550,
+     "Abilities": [
+       "Cute",
+       "charm",
+       "Magic",
+       "guard",
+       "Unaware"
+     ],
+     "EVs": [
+       "3 HP"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0,
+     "Electric": 0,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 0.5,
+     "Ground": 0,
+     "Grass": 0,
+     "Rock": 0,
+     "Steel": 2,
+     "Poison": 2,
+     "Ghost": 0,
+     "Dark": 0.5,
+     "Dragon": 0,
+     "Bug": 0.5,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Moonlight",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 5,
+         "Description": "Heals the user for half its max HP.\n\nDuring sunny-day, the healing is increased to 2/3 max HP.\n\nDuring hail, rain-dance, or sandstorm, the healing is decreased to 1/4 max HP."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Metronome",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 10,
+         "Description": "Selects any move at random and uses it.  Moves the user already knows are not eligible.  Assist, meta, protection, and reflection moves are also not eligible; specifically, assist, chatter, copycat, counter, covet, destiny-bond, detect, endure, feint, focus-punch, follow-me, helping-hand, me-first, metronome, mimic, mirror-coat, mirror-move, protect, quick-guard, sketch, sleep-talk, snatch, struggle, switcheroo, thief, trick, and wide-guard will not be selected by this move.\n\nThis move cannot be copied by mimic or mirror-move, nor selected by assist, metronome, or sleep-talk."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 37,
+     "Name": "Vulpix",
+     "Types": [
+       "fire"
+     ],
+     "HP": 38,
+     "Attack": 41,
+     "Defense": 40,
+     "Speed": 65,
+     "Sp_Atk": 50,
+     "Sp_Def": 65,
+     "Monster_Species": "Fox Pokémon",
+     "Monster_Description": "As each tail grows, its fur becomes more lustrous. When held, it feels slightly warm."
+   },
+   "Profile": {
+     "Height": 0.6,
+     "Weight": 9.9,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       25,
+       75
+     ],
+     "Egg_Groups": [
+       "Field"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Flash",
+       "fire",
+       "Drought"
+     ],
+     "EVs": [
+       "1 Speed"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 0,
+     "Fire": 0.5,
+     "Water": 2,
+     "Flying": 0,
+     "Fairy": 0.5,
+     "Psychic": 0,
+     "Fighting": 0,
+     "Ground": 2,
+     "Grass": 0,
+     "Rock": 2,
+     "Steel": 0.5,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Ember",
+       "Type": {
+         "Power": 40,
+         "Acc": 100,
+         "PP": 25,
+         "Description": "Inflicts regular damage.  Has a 10% chance to burn the target."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Tail whip",
+       "Type": {
+         "Power": -1,
+         "Acc": 100,
+         "PP": 30,
+         "Description": "Lowers the target's Defense by one stage."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 38,
+     "Name": "Ninetales",
+     "Types": [
+       "fire"
+     ],
+     "HP": 73,
+     "Attack": 76,
+     "Defense": 75,
+     "Speed": 100,
+     "Sp_Atk": 81,
+     "Sp_Def": 100,
+     "Monster_Species": "Fox Pokémon",
+     "Monster_Description": "Each of its nine tails is imbued with supernatural power, and it can live for a thousand years."
+   },
+   "Profile": {
+     "Height": 1.1,
+     "Weight": 19.9,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       25,
+       75
+     ],
+     "Egg_Groups": [
+       "Field"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Flash",
+       "fire",
+       "Drought"
+     ],
+     "EVs": [
+       "1 Speed",
+       "1 Sp Def"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 0,
+     "Fire": 0.5,
+     "Water": 2,
+     "Flying": 0,
+     "Fairy": 0.5,
+     "Psychic": 0,
+     "Fighting": 0,
+     "Ground": 2,
+     "Grass": 0,
+     "Rock": 2,
+     "Steel": 0.5,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Nasty plot",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 20,
+         "Description": "Raises the user's Special Attack by two stages."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Safeguard",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 25,
+         "Description": "Protects Pokémon on the user's side of the field from major status effects and confusion for five turns.  Does not cancel existing ailments.  This effect remains even if the user leaves the field.\n\nIf yawn is used while this move is in effect, it will immediately fail.\n\ndefog used by an opponent will end this effect.\n\nThis effect does not prevent the confusion caused by outrage, petal-dance, or thrash."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 39,
+     "Name": "Jigglypuff",
+     "Types": [
+       "fairy",
+       "normal"
+     ],
+     "HP": 115,
+     "Attack": 45,
+     "Defense": 20,
+     "Speed": 20,
+     "Sp_Atk": 45,
+     "Sp_Def": 25,
+     "Monster_Species": "Balloon Pokémon",
+     "Monster_Description": "Looking into its cute, round eyes makes it start singing a song so pleasant listeners cant help but fall asleep."
+   },
+   "Profile": {
+     "Height": 0.5,
+     "Weight": 5.5,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       25,
+       75
+     ],
+     "Egg_Groups": [
+       "Fairy"
+     ],
+     "Hatch_Steps": 2550,
+     "Abilities": [
+       "Cute",
+       "charm",
+       "Friend",
+       "guard"
+     ],
+     "EVs": [
+       "2 HP"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0,
+     "Electric": 0,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 0,
+     "Ground": 0,
+     "Grass": 0,
+     "Rock": 0,
+     "Steel": 2,
+     "Poison": 2,
+     "Ghost": 0,
+     "Dark": 0.5,
+     "Dragon": 0,
+     "Bug": 0.5,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Sing",
+       "Type": {
+         "Power": -1,
+         "Acc": 55,
+         "PP": 15,
+         "Description": "Puts the target to sleep."
+       }
+     },
+     {
+       "Index": 9,
+       "Move": "Pound",
+       "Type": {
+         "Power": 40,
+         "Acc": 100,
+         "PP": 35,
+         "Description": "Inflicts regular damage."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 40,
+     "Name": "Wigglytuff",
+     "Types": [
+       "fairy",
+       "normal"
+     ],
+     "HP": 140,
+     "Attack": 70,
+     "Defense": 45,
+     "Speed": 45,
+     "Sp_Atk": 85,
+     "Sp_Def": 50,
+     "Monster_Species": "Balloon Pokémon",
+     "Monster_Description": "Its fine fur feels so pleasant, those who accidentally touch it cannot take their hands away."
+   },
+   "Profile": {
+     "Height": 1,
+     "Weight": 12,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       25,
+       75
+     ],
+     "Egg_Groups": [
+       "Fairy"
+     ],
+     "Hatch_Steps": 2550,
+     "Abilities": [
+       "Cute",
+       "charm",
+       "Frisk"
+     ],
+     "EVs": [
+       "3 HP"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0,
+     "Electric": 0,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 0,
+     "Ground": 0,
+     "Grass": 0,
+     "Rock": 0,
+     "Steel": 2,
+     "Poison": 2,
+     "Ghost": 0,
+     "Dark": 0.5,
+     "Dragon": 0,
+     "Bug": 0.5,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Defense curl",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 40,
+         "Description": "Raises user's Defense by one stage.\n\nAfter this move is used, the power of ice-ball and rollout are doubled until the user leaves the field."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Disable",
+       "Type": {
+         "Power": -1,
+         "Acc": 100,
+         "PP": 20,
+         "Description": "Disables the target's last used move, preventing its use for 4–7 turns, selected at random, or until the target leaves the field.  If the target hasn't used a move since entering the field, if it tried to use a move this turn and failed,  if its last used move has 0 PP remaining, or if it already has a move disabled, this move will fail."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 41,
+     "Name": "Zubat",
+     "Types": [
+       "poison",
+       "flying"
+     ],
+     "HP": 40,
+     "Attack": 45,
+     "Defense": 35,
+     "Speed": 55,
+     "Sp_Atk": 30,
+     "Sp_Def": 40,
+     "Monster_Species": "Bat Pokémon",
+     "Monster_Description": "It does not need eyes, because it emits ultrasonic waves to check its surroundings while it flies."
+   },
+   "Profile": {
+     "Height": 0.8,
+     "Weight": 7.5,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Flying"
+     ],
+     "Hatch_Steps": 3825,
+     "Abilities": [
+       "Inner",
+       "focus",
+       "Infiltrator"
+     ],
+     "EVs": [
+       "1 Speed"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 2,
+     "Electric": 2,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 0,
+     "Fairy": 0.5,
+     "Psychic": 2,
+     "Fighting": 0.25,
+     "Ground": 2,
+     "Grass": 0.25,
+     "Rock": 2,
+     "Steel": 0,
+     "Poison": 0.5,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0.25,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 22,
+       "From": "Zubat",
+       "To": "Golbat"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Leech life",
+       "Type": {
+         "Power": 20,
+         "Acc": 100,
+         "PP": 15,
+         "Description": "Inflicts regular damage.  Drains half the damage inflicted to heal the user."
+       }
+     },
+     {
+       "Index": 10,
+       "Move": "Supersonic",
+       "Type": {
+         "Power": -1,
+         "Acc": 55,
+         "PP": 20,
+         "Description": "Confuse the target."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 42,
+     "Name": "Golbat",
+     "Types": [
+       "poison",
+       "flying"
+     ],
+     "HP": 75,
+     "Attack": 80,
+     "Defense": 70,
+     "Speed": 90,
+     "Sp_Atk": 65,
+     "Sp_Def": 75,
+     "Monster_Species": "Bat Pokémon",
+     "Monster_Description": "Flitting around in the dead of night, it sinks its fangs into its prey and drains a nearly fatal amount of blood."
+   },
+   "Profile": {
+     "Height": 1.6,
+     "Weight": 55,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Flying"
+     ],
+     "Hatch_Steps": 3825,
+     "Abilities": [
+       "Inner",
+       "focus",
+       "Infiltrator"
+     ],
+     "EVs": [
+       "2 Speed"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 2,
+     "Electric": 2,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 0,
+     "Fairy": 0.5,
+     "Psychic": 2,
+     "Fighting": 0.25,
+     "Ground": 2,
+     "Grass": 0.25,
+     "Rock": 2,
+     "Steel": 0,
+     "Poison": 0.5,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0.25,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Astonish",
+       "Type": {
+         "Power": 30,
+         "Acc": 100,
+         "PP": 15,
+         "Description": "Inflicts regular damage.  Has a 30% chance to make the target flinch."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Leech life",
+       "Type": {
+         "Power": 20,
+         "Acc": 100,
+         "PP": 15,
+         "Description": "Inflicts regular damage.  Drains half the damage inflicted to heal the user."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 43,
+     "Name": "Oddish",
+     "Types": [
+       "grass",
+       "poison"
+     ],
+     "HP": 45,
+     "Attack": 50,
+     "Defense": 55,
+     "Speed": 30,
+     "Sp_Atk": 75,
+     "Sp_Def": 65,
+     "Monster_Species": "Weed Pokémon",
+     "Monster_Description": "It often plants its root feet in the ground during the day and sows seeds as it walks about at night."
+   },
+   "Profile": {
+     "Height": 0.5,
+     "Weight": 5.4,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Grass"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Chlorophyll",
+       "Run",
+       "away"
+     ],
+     "EVs": [
+       "1 Sp Att"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 2,
+     "Electric": 0.5,
+     "Fire": 2,
+     "Water": 0.5,
+     "Flying": 2,
+     "Fairy": 0.5,
+     "Psychic": 2,
+     "Fighting": 0.5,
+     "Ground": 2,
+     "Grass": 0.25,
+     "Rock": 0,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 21,
+       "From": "Oddish",
+       "To": "Gloom"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Absorb",
+       "Type": {
+         "Power": 20,
+         "Acc": 100,
+         "PP": 25,
+         "Description": "Inflicts regular damage.  Drains half the damage inflicted to heal the user."
+       }
+     },
+     {
+       "Index": 7,
+       "Move": "Sweet scent",
+       "Type": {
+         "Power": -1,
+         "Acc": 100,
+         "PP": 20,
+         "Description": "Lowers the target's evasion by one stage."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 44,
+     "Name": "Gloom",
+     "Types": [
+       "grass",
+       "poison"
+     ],
+     "HP": 60,
+     "Attack": 65,
+     "Defense": 70,
+     "Speed": 40,
+     "Sp_Atk": 85,
+     "Sp_Def": 75,
+     "Monster_Species": "Weed Pokémon",
+     "Monster_Description": "The honey it drools from its mouth smells so atrocious, it can curl noses more than a mile away."
+   },
+   "Profile": {
+     "Height": 0.8,
+     "Weight": 8.6,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Grass"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Stench",
+       "Chlorophyll"
+     ],
+     "EVs": [
+       "2 Sp Att"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 2,
+     "Electric": 0.5,
+     "Fire": 2,
+     "Water": 0.5,
+     "Flying": 2,
+     "Fairy": 0.5,
+     "Psychic": 2,
+     "Fighting": 0.5,
+     "Ground": 2,
+     "Grass": 0.25,
+     "Rock": 0,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Sweet scent",
+       "Type": {
+         "Power": -1,
+         "Acc": 100,
+         "PP": 20,
+         "Description": "Lowers the target's evasion by one stage."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Stun spore",
+       "Type": {
+         "Power": -1,
+         "Acc": 75,
+         "PP": 30,
+         "Description": "Paralyzes the target."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 45,
+     "Name": "Vileplume",
+     "Types": [
+       "grass",
+       "poison"
+     ],
+     "HP": 75,
+     "Attack": 80,
+     "Defense": 85,
+     "Speed": 50,
+     "Sp_Atk": 110,
+     "Sp_Def": 90,
+     "Monster_Species": "Flower Pokémon",
+     "Monster_Description": "Its petals are the largest in the world. As it walks, it scatters extremely allergenic pollen."
+   },
+   "Profile": {
+     "Height": 1.2,
+     "Weight": 18.6,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Grass"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Effect",
+       "spore",
+       "Chlorophyll"
+     ],
+     "EVs": [
+       "3 Sp Att"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 2,
+     "Electric": 0.5,
+     "Fire": 2,
+     "Water": 0.5,
+     "Flying": 2,
+     "Fairy": 0.5,
+     "Psychic": 2,
+     "Fighting": 0.5,
+     "Ground": 2,
+     "Grass": 0.25,
+     "Rock": 0,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Aromatherapy",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 5,
+         "Description": "Removes major status effects-effects and confusion from every Pokémon in the user's party."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Sweet scent",
+       "Type": {
+         "Power": -1,
+         "Acc": 100,
+         "PP": 20,
+         "Description": "Lowers the target's evasion by one stage."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 46,
+     "Name": "Paras",
+     "Types": [
+       "grass",
+       "bug"
+     ],
+     "HP": 35,
+     "Attack": 70,
+     "Defense": 55,
+     "Speed": 25,
+     "Sp_Atk": 45,
+     "Sp_Def": 55,
+     "Monster_Species": "Mushroom Pokémon",
+     "Monster_Description": "Mushrooms named tochukaso grow on its back. They grow along with the host Paras."
+   },
+   "Profile": {
+     "Height": 0.3,
+     "Weight": 5.4,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Bug",
+       "Grass"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Damp",
+       "Effect",
+       "spore",
+       "Dry",
+       "skin"
+     ],
+     "EVs": [
+       "1 Attack"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 2,
+     "Electric": 0.5,
+     "Fire": 4,
+     "Water": 0.5,
+     "Flying": 4,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 0.5,
+     "Ground": 0.5,
+     "Grass": 0.25,
+     "Rock": 2,
+     "Steel": 0,
+     "Poison": 2,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 2,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 24,
+       "From": "Paras",
+       "To": "Parasect"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Scratch",
+       "Type": {
+         "Power": 40,
+         "Acc": 100,
+         "PP": 35,
+         "Description": "Inflicts regular damage."
+       }
+     },
+     {
+       "Index": 13,
+       "Move": "Poisonpowder",
+       "Type": {
+         "Power": -1,
+         "Acc": 75,
+         "PP": 35,
+         "Description": "Poisons the target."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 47,
+     "Name": "Parasect",
+     "Types": [
+       "grass",
+       "bug"
+     ],
+     "HP": 60,
+     "Attack": 95,
+     "Defense": 80,
+     "Speed": 30,
+     "Sp_Atk": 60,
+     "Sp_Def": 80,
+     "Monster_Species": "Mushroom Pokémon",
+     "Monster_Description": "A mushroom grown larger than the hosts body controls Parasect. It scatters poisonous spores."
+   },
+   "Profile": {
+     "Height": 1,
+     "Weight": 29.5,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Bug",
+       "Grass"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Damp",
+       "Effect",
+       "spore",
+       "Dry",
+       "skin"
+     ],
+     "EVs": [
+       "2 Attack",
+       "1 Defense"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 2,
+     "Electric": 0.5,
+     "Fire": 4,
+     "Water": 0.5,
+     "Flying": 4,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 0.5,
+     "Ground": 0.5,
+     "Grass": 0.25,
+     "Rock": 2,
+     "Steel": 0,
+     "Poison": 2,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 2,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 24,
+       "From": "Paras",
+       "To": "Parasect"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Cross poison",
+       "Type": {
+         "Power": 70,
+         "Acc": 100,
+         "PP": 20,
+         "Description": "Inflicts regular damage.  User's critical hit rate is one level higher when using this move. Has a 10% chance to poison the target."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Poisonpowder",
+       "Type": {
+         "Power": -1,
+         "Acc": 75,
+         "PP": 35,
+         "Description": "Poisons the target."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 48,
+     "Name": "Venonat",
+     "Types": [
+       "bug",
+       "poison"
+     ],
+     "HP": 60,
+     "Attack": 55,
+     "Defense": 50,
+     "Speed": 45,
+     "Sp_Atk": 40,
+     "Sp_Def": 55,
+     "Monster_Species": "Insect Pokémon",
+     "Monster_Description": "Its big eyes are actually clusters of tiny eyes. At night, its kind is drawn by light."
+   },
+   "Profile": {
+     "Height": 1,
+     "Weight": 30,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Bug"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Compoundeyes",
+       "Run",
+       "away",
+       "Tinted",
+       "lens"
+     ],
+     "EVs": [
+       "1 Sp Def"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0,
+     "Electric": 0,
+     "Fire": 2,
+     "Water": 0,
+     "Flying": 2,
+     "Fairy": 0.5,
+     "Psychic": 2,
+     "Fighting": 0.25,
+     "Ground": 0,
+     "Grass": 0.25,
+     "Rock": 2,
+     "Steel": 0,
+     "Poison": 0.5,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0.5,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 31,
+       "From": "Venonat",
+       "To": "Venomoth"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Foresight",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 40,
+         "Description": "Resets the target's evasion to normal and prevents any further boosting until the target leaves the field.  A ghost under this effect takes normal damage from normal and fighting moves.  This move itself ignores accuracy and evasion modifiers."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Disable",
+       "Type": {
+         "Power": -1,
+         "Acc": 100,
+         "PP": 20,
+         "Description": "Disables the target's last used move, preventing its use for 4–7 turns, selected at random, or until the target leaves the field.  If the target hasn't used a move since entering the field, if it tried to use a move this turn and failed,  if its last used move has 0 PP remaining, or if it already has a move disabled, this move will fail."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 49,
+     "Name": "Venomoth",
+     "Types": [
+       "bug",
+       "poison"
+     ],
+     "HP": 70,
+     "Attack": 65,
+     "Defense": 60,
+     "Speed": 90,
+     "Sp_Atk": 90,
+     "Sp_Def": 75,
+     "Monster_Species": "Poison Moth Pokémon",
+     "Monster_Description": "It flutters its wings to scatter dustlike scales. The scales leach toxins if they contact skin."
+   },
+   "Profile": {
+     "Height": 1.5,
+     "Weight": 12.5,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Bug"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Shield",
+       "dust",
+       "Tinted",
+       "lens",
+       "Wonder",
+       "skin"
+     ],
+     "EVs": [
+       "1 Speed",
+       "1 Sp Att"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0,
+     "Electric": 0,
+     "Fire": 2,
+     "Water": 0,
+     "Flying": 2,
+     "Fairy": 0.5,
+     "Psychic": 2,
+     "Fighting": 0.25,
+     "Ground": 0,
+     "Grass": 0.25,
+     "Rock": 2,
+     "Steel": 0,
+     "Poison": 0.5,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0.5,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 31,
+       "From": "Venonat",
+       "To": "Venomoth"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Silver wind",
+       "Type": {
+         "Power": 60,
+         "Acc": 100,
+         "PP": 5,
+         "Description": "Inflicts regular damage. Has a 10% chance to raise all of the user's stats one stage."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Foresight",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 40,
+         "Description": "Resets the target's evasion to normal and prevents any further boosting until the target leaves the field.  A ghost under this effect takes normal damage from normal and fighting moves.  This move itself ignores accuracy and evasion modifiers."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 50,
+     "Name": "Diglett",
+     "Types": [
+       "ground"
+     ],
+     "HP": 10,
+     "Attack": 55,
+     "Defense": 25,
+     "Speed": 95,
+     "Sp_Atk": 35,
+     "Sp_Def": 45,
+     "Monster_Species": "Mole Pokémon",
+     "Monster_Description": "A Pokémon that lives underground. Because of its dark habitat, it is repelled by bright sunlight."
+   },
+   "Profile": {
+     "Height": 0.2,
+     "Weight": 0.8,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Field"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Sand",
+       "veil",
+       "Arena",
+       "trap",
+       "Sand",
+       "force"
+     ],
+     "EVs": [
+       "1 Speed"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 2,
+     "Electric": 0,
+     "Fire": 0,
+     "Water": 2,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 0,
+     "Ground": 0.5,
+     "Grass": 2,
+     "Rock": 0.5,
+     "Steel": 0,
+     "Poison": 0.5,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 26,
+       "From": "Diglett",
+       "To": "Dugtrio"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Scratch",
+       "Type": {
+         "Power": 40,
+         "Acc": 100,
+         "PP": 35,
+         "Description": "Inflicts regular damage."
+       }
+     },
+     {
+       "Index": 7,
+       "Move": "Astonish",
+       "Type": {
+         "Power": 30,
+         "Acc": 100,
+         "PP": 15,
+         "Description": "Inflicts regular damage.  Has a 30% chance to make the target flinch."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 51,
+     "Name": "Dugtrio",
+     "Types": [
+       "ground"
+     ],
+     "HP": 35,
+     "Attack": 80,
+     "Defense": 50,
+     "Speed": 120,
+     "Sp_Atk": 50,
+     "Sp_Def": 70,
+     "Monster_Species": "Mole Pokémon",
+     "Monster_Description": "Its three heads move alternately, driving it through tough soil to depths of over 60 miles."
+   },
+   "Profile": {
+     "Height": 0.7,
+     "Weight": 33.3,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Field"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Sand",
+       "veil",
+       "Arena",
+       "trap",
+       "Sand",
+       "force"
+     ],
+     "EVs": [
+       "2 Speed"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 2,
+     "Electric": 0,
+     "Fire": 0,
+     "Water": 2,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 0,
+     "Ground": 0.5,
+     "Grass": 2,
+     "Rock": 0.5,
+     "Steel": 0,
+     "Poison": 0.5,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 26,
+       "From": "Diglett",
+       "To": "Dugtrio"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Scratch",
+       "Type": {
+         "Power": 40,
+         "Acc": 100,
+         "PP": 35,
+         "Description": "Inflicts regular damage."
+       }
+     },
+     {
+       "Index": 7,
+       "Move": "Astonish",
+       "Type": {
+         "Power": 30,
+         "Acc": 100,
+         "PP": 15,
+         "Description": "Inflicts regular damage.  Has a 30% chance to make the target flinch."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 52,
+     "Name": "Meowth",
+     "Types": [
+       "normal"
+     ],
+     "HP": 40,
+     "Attack": 45,
+     "Defense": 35,
+     "Speed": 90,
+     "Sp_Atk": 40,
+     "Sp_Def": 40,
+     "Monster_Species": "Bakeneko Pokémon",
+     "Monster_Description": "It is nocturnal in nature. If it spots something shiny, its eyes glitter brightly."
+   },
+   "Profile": {
+     "Height": 0.4,
+     "Weight": 4.2,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Field"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Pickup",
+       "Technician",
+       "Unnerve"
+     ],
+     "EVs": [
+       "1 Speed"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0,
+     "Electric": 0,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 2,
+     "Ground": 0,
+     "Grass": 0,
+     "Rock": 0,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 28,
+       "From": "Meowth",
+       "To": "Persian"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Growl",
+       "Type": {
+         "Power": -1,
+         "Acc": 100,
+         "PP": 40,
+         "Description": "Lowers the target's Attack by one stage."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Scratch",
+       "Type": {
+         "Power": 40,
+         "Acc": 100,
+         "PP": 35,
+         "Description": "Inflicts regular damage."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 53,
+     "Name": "Persian",
+     "Types": [
+       "normal"
+     ],
+     "HP": 65,
+     "Attack": 70,
+     "Defense": 60,
+     "Speed": 115,
+     "Sp_Atk": 65,
+     "Sp_Def": 65,
+     "Monster_Species": "Siamese Cat Pokémon",
+     "Monster_Description": "A very haughty Pokémon. Among fans, the size of the jewel in its forehead is a topic of much talk."
+   },
+   "Profile": {
+     "Height": 1,
+     "Weight": 32,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Field"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Limber",
+       "Technician",
+       "Unnerve"
+     ],
+     "EVs": [
+       "2 Speed"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0,
+     "Electric": 0,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 2,
+     "Ground": 0,
+     "Grass": 0,
+     "Rock": 0,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 28,
+       "From": "Meowth",
+       "To": "Persian"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Switcheroo",
+       "Type": {
+         "Power": -1,
+         "Acc": 100,
+         "PP": 10,
+         "Description": "User and target permanently swap held item.  Works even if one of the Pokémon isn't holding anything.  If either Pokémon is holding mail, this move will fail.\n\nIf either Pokémon has multitype or sticky-hold, this move will fail.\n\nIf this move results in a Pokémon obtaining choice-band, choice-scarf, or choice-specs, and that Pokémon was the latter of the pair to move this turn, then the move it used this turn becomes its chosen forced move.  This applies even if both Pokémon had a choice item before this move was used.  If the first of the two Pokémon gains a choice item, it may select whatever choice move it wishes next turn.\n\nNeither the user nor the target can recover its item with recycle.\n\nThis move cannot be selected by assist or metronome."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Screech",
+       "Type": {
+         "Power": -1,
+         "Acc": 85,
+         "PP": 40,
+         "Description": "Lowers the target's Defense by two stages."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 54,
+     "Name": "Psyduck",
+     "Types": [
+       "water"
+     ],
+     "HP": 50,
+     "Attack": 52,
+     "Defense": 48,
+     "Speed": 55,
+     "Sp_Atk": 65,
+     "Sp_Def": 50,
+     "Monster_Species": "Duck Pokémon",
+     "Monster_Description": "When headaches stimulate its brain cells, which are usually inactive, it can use a mysterious power."
+   },
+   "Profile": {
+     "Height": 0.8,
+     "Weight": 19.6,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Water",
+       "Field"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Damp",
+       "Cloud",
+       "nine",
+       "Swift",
+       "swim"
+     ],
+     "EVs": [
+       "1 Sp Att"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 2,
+     "Fire": 0.5,
+     "Water": 0.5,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 0,
+     "Ground": 0,
+     "Grass": 2,
+     "Rock": 0,
+     "Steel": 0.5,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 33,
+       "From": "Psyduck",
+       "To": "Golduck"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Water sport",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 15,
+         "Description": "fire moves inflict half damage, regardless of target.  If the user leaves the field, this effect ends."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Scratch",
+       "Type": {
+         "Power": 40,
+         "Acc": 100,
+         "PP": 35,
+         "Description": "Inflicts regular damage."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 55,
+     "Name": "Golduck",
+     "Types": [
+       "water"
+     ],
+     "HP": 80,
+     "Attack": 82,
+     "Defense": 78,
+     "Speed": 85,
+     "Sp_Atk": 95,
+     "Sp_Def": 80,
+     "Monster_Species": "Duck Pokémon",
+     "Monster_Description": "When its forehead shines mysteriously, Golduck can use the full extent of its power."
+   },
+   "Profile": {
+     "Height": 1.7,
+     "Weight": 76.6,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Water",
+       "Field"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Damp",
+       "Cloud",
+       "nine",
+       "Swift",
+       "swim"
+     ],
+     "EVs": [
+       "2 Sp Att"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 2,
+     "Fire": 0.5,
+     "Water": 0.5,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 0,
+     "Ground": 0,
+     "Grass": 2,
+     "Rock": 0,
+     "Steel": 0.5,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 33,
+       "From": "Psyduck",
+       "To": "Golduck"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Aqua jet",
+       "Type": {
+         "Power": 40,
+         "Acc": 100,
+         "PP": 20,
+         "Description": "Inflicts regular damage."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Water sport",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 15,
+         "Description": "fire moves inflict half damage, regardless of target.  If the user leaves the field, this effect ends."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 56,
+     "Name": "Mankey",
+     "Types": [
+       "fighting"
+     ],
+     "HP": 40,
+     "Attack": 80,
+     "Defense": 35,
+     "Speed": 70,
+     "Sp_Atk": 35,
+     "Sp_Def": 45,
+     "Monster_Species": "Pig Monkey Pokémon",
+     "Monster_Description": "It lives in treetop colonies. If one becomes enraged, the whole colony rampages for no reason."
+   },
+   "Profile": {
+     "Height": 0.5,
+     "Weight": 28,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Field"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Vital",
+       "spirit",
+       "Anger",
+       "point",
+       "Defiant"
+     ],
+     "EVs": [
+       "1 Attack"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0,
+     "Electric": 0,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 2,
+     "Fairy": 2,
+     "Psychic": 2,
+     "Fighting": 0,
+     "Ground": 0,
+     "Grass": 0.5,
+     "Rock": 0.5,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0.5,
+     "Dragon": 0,
+     "Bug": 0.5,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 28,
+       "From": "Mankey",
+       "To": "Primeape"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Covet",
+       "Type": {
+         "Power": 60,
+         "Acc": 100,
+         "PP": 25,
+         "Description": "Inflicts regular damage.  If the target is holding an item and the user is not, the user will permanently take the item.  Damage is still inflicted if an item cannot be taken.\n\nPokémon with sticky-hold or multitype are immune to the item theft effect.\n\nThe target cannot recover its item with recycle.\n\nThis move cannot be selected by assist or metronome."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Leer",
+       "Type": {
+         "Power": -1,
+         "Acc": 100,
+         "PP": 30,
+         "Description": "Lowers the target's Defense by one stage."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 57,
+     "Name": "Primeape",
+     "Types": [
+       "fighting"
+     ],
+     "HP": 65,
+     "Attack": 105,
+     "Defense": 60,
+     "Speed": 95,
+     "Sp_Atk": 60,
+     "Sp_Def": 70,
+     "Monster_Species": "Pig Monkey Pokémon",
+     "Monster_Description": "It grows angry if you see its eyes and gets angrier if you run. If you beat it, it gets even madder."
+   },
+   "Profile": {
+     "Height": 1,
+     "Weight": 32,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Field"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Vital",
+       "spirit",
+       "Anger",
+       "point",
+       "Defiant"
+     ],
+     "EVs": [
+       "2 Attack"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0,
+     "Electric": 0,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 2,
+     "Fairy": 2,
+     "Psychic": 2,
+     "Fighting": 0,
+     "Ground": 0,
+     "Grass": 0.5,
+     "Rock": 0.5,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0.5,
+     "Dragon": 0,
+     "Bug": 0.5,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 28,
+       "From": "Mankey",
+       "To": "Primeape"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Fling",
+       "Type": {
+         "Power": -1,
+         "Acc": 100,
+         "PP": 10,
+         "Description": "Inflicts regular damage.  Power and type are determined by the user's held item.  The item is consumed.  If the user is not holding an item, or its item has no set type and power, this move will fail.\n\nThis move ignores sticky-hold.\n\nIf the user is under the effect of embargo, this move will fail."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Low kick",
+       "Type": {
+         "Power": -1,
+         "Acc": 100,
+         "PP": 20,
+         "Description": "Inflicts regular damage.  Power increases with the target's weight in kilograms, to a maximum of 120.\n\nTarget's weight | Power\n--------------- | ----:\nUp to 10kg      |    20\nUp to 25kg      |    40\nUp to 50kg      |    60\nUp to 100kg     |    80\nUp to 200kg     |   100\nAbove 200kg     |   120\n"
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 58,
+     "Name": "Growlithe",
+     "Types": [
+       "fire"
+     ],
+     "HP": 55,
+     "Attack": 70,
+     "Defense": 45,
+     "Speed": 60,
+     "Sp_Atk": 70,
+     "Sp_Def": 50,
+     "Monster_Species": "Puppy Pokémon",
+     "Monster_Description": "Extremely loyal to its Trainer, it will bark at those who approach the Trainer unexpectedly and run them out of town."
+   },
+   "Profile": {
+     "Height": 0.7,
+     "Weight": 19,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       75,
+       25
+     ],
+     "Egg_Groups": [
+       "Field"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Flash",
+       "fire",
+       "Intimidate",
+       "Justified"
+     ],
+     "EVs": [
+       "1 Attack"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 0,
+     "Fire": 0.5,
+     "Water": 2,
+     "Flying": 0,
+     "Fairy": 0.5,
+     "Psychic": 0,
+     "Fighting": 0,
+     "Ground": 2,
+     "Grass": 0,
+     "Rock": 2,
+     "Steel": 0.5,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Roar",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 20,
+         "Description": "Switch the target out for another of its trainer's Pokémon selected at random.  Wild battles end immediately.\n\nDoesn't affect Pokémon with suction-cups or under the effect of ingrain."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Bite",
+       "Type": {
+         "Power": 60,
+         "Acc": 100,
+         "PP": 25,
+         "Description": "Inflicts regular damage.  Has a 30% chance to make the target flinch."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 59,
+     "Name": "Arcanine",
+     "Types": [
+       "fire"
+     ],
+     "HP": 90,
+     "Attack": 110,
+     "Defense": 80,
+     "Speed": 95,
+     "Sp_Atk": 100,
+     "Sp_Def": 80,
+     "Monster_Species": "Legend Pokémon",
+     "Monster_Description": "The sight of it running over 6,200 miles in a single day and night has captivated many people."
+   },
+   "Profile": {
+     "Height": 1.9,
+     "Weight": 155,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       75,
+       25
+     ],
+     "Egg_Groups": [
+       "Field"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Flash",
+       "fire",
+       "Intimidate",
+       "Justified"
+     ],
+     "EVs": [
+       "2 Attack"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 0,
+     "Fire": 0.5,
+     "Water": 2,
+     "Flying": 0,
+     "Fairy": 0.5,
+     "Psychic": 0,
+     "Fighting": 0,
+     "Ground": 2,
+     "Grass": 0,
+     "Rock": 2,
+     "Steel": 0.5,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Fire fang",
+       "Type": {
+         "Power": 65,
+         "Acc": 95,
+         "PP": 15,
+         "Description": "Inflicts regular damage.  Has a 10% chance to burn the target and a separate 10% chance to make the target flinch."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Thunder fang",
+       "Type": {
+         "Power": 65,
+         "Acc": 95,
+         "PP": 15,
+         "Description": "Inflicts regular damage.  Has a 10% chance to paralyze the target and a separate 10% chance to make the target flinch."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 60,
+     "Name": "Poliwag",
+     "Types": [
+       "water"
+     ],
+     "HP": 40,
+     "Attack": 50,
+     "Defense": 40,
+     "Speed": 90,
+     "Sp_Atk": 40,
+     "Sp_Def": 40,
+     "Monster_Species": "Tadpole Pokémon",
+     "Monster_Description": "Its skin is so thin, its internal organs are visible. It has trouble walking on its newly grown feet."
+   },
+   "Profile": {
+     "Height": 0.6,
+     "Weight": 12.4,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Water"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Damp",
+       "Water",
+       "absorb",
+       "Swift",
+       "swim"
+     ],
+     "EVs": [
+       "1 Speed"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 2,
+     "Fire": 0.5,
+     "Water": 0.5,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 0,
+     "Ground": 0,
+     "Grass": 2,
+     "Rock": 0,
+     "Steel": 0.5,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 25,
+       "From": "Poliwag",
+       "To": "Poliwhirl"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Bubble",
+       "Type": {
+         "Power": 40,
+         "Acc": 100,
+         "PP": 30,
+         "Description": "Inflicts regular damage.  Has a 10% chance to lower the target's Speed by one stage."
+       }
+     },
+     {
+       "Index": 16,
+       "Move": "Hypnosis",
+       "Type": {
+         "Power": -1,
+         "Acc": 60,
+         "PP": 20,
+         "Description": "Puts the target to sleep."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 61,
+     "Name": "Poliwhirl",
+     "Types": [
+       "water"
+     ],
+     "HP": 65,
+     "Attack": 65,
+     "Defense": 65,
+     "Speed": 90,
+     "Sp_Atk": 50,
+     "Sp_Def": 50,
+     "Monster_Species": "Tadpole Pokémon",
+     "Monster_Description": "The spiral pattern on its belly subtly undulates. Staring at it gradually causes drowsiness."
+   },
+   "Profile": {
+     "Height": 1,
+     "Weight": 20,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Water"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Damp",
+       "Water",
+       "absorb",
+       "Swift",
+       "swim"
+     ],
+     "EVs": [
+       "2 Speed"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 2,
+     "Fire": 0.5,
+     "Water": 0.5,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 0,
+     "Ground": 0,
+     "Grass": 2,
+     "Rock": 0,
+     "Steel": 0.5,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Water sport",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 15,
+         "Description": "fire moves inflict half damage, regardless of target.  If the user leaves the field, this effect ends."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Bubble",
+       "Type": {
+         "Power": 40,
+         "Acc": 100,
+         "PP": 30,
+         "Description": "Inflicts regular damage.  Has a 10% chance to lower the target's Speed by one stage."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 62,
+     "Name": "Poliwrath",
+     "Types": [
+       "water",
+       "fighting"
+     ],
+     "HP": 90,
+     "Attack": 95,
+     "Defense": 95,
+     "Speed": 70,
+     "Sp_Atk": 70,
+     "Sp_Def": 90,
+     "Monster_Species": "Tadpole Pokémon",
+     "Monster_Description": "With its extremely tough muscles, it can keep swimming in the Pacific Ocean without resting."
+   },
+   "Profile": {
+     "Height": 1.3,
+     "Weight": 54,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Water"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Damp",
+       "Water",
+       "absorb",
+       "Swift",
+       "swim"
+     ],
+     "EVs": [
+       "3 Defense"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 2,
+     "Fire": 0.5,
+     "Water": 0.5,
+     "Flying": 2,
+     "Fairy": 2,
+     "Psychic": 2,
+     "Fighting": 0,
+     "Ground": 0,
+     "Grass": 0,
+     "Rock": 0.5,
+     "Steel": 0.5,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0.5,
+     "Dragon": 0,
+     "Bug": 0.5,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Hypnosis",
+       "Type": {
+         "Power": -1,
+         "Acc": 60,
+         "PP": 20,
+         "Description": "Puts the target to sleep."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Water gun",
+       "Type": {
+         "Power": 40,
+         "Acc": 100,
+         "PP": 25,
+         "Description": "Inflicts regular damage."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 63,
+     "Name": "Abra",
+     "Types": [
+       "psychic"
+     ],
+     "HP": 25,
+     "Attack": 20,
+     "Defense": 15,
+     "Speed": 90,
+     "Sp_Atk": 105,
+     "Sp_Def": 55,
+     "Monster_Species": "Telekinesis Pokémon",
+     "Monster_Description": "Using its psychic power is such a strain on its brain that it needs to sleep for 18 hours a day."
+   },
+   "Profile": {
+     "Height": 0.9,
+     "Weight": 19.5,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       75,
+       25
+     ],
+     "Egg_Groups": [
+       "Human",
+       "Like"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Synchronize",
+       "Inner",
+       "focus",
+       "Magic",
+       "guard"
+     ],
+     "EVs": [
+       "1 Sp Att"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0,
+     "Electric": 0,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0.5,
+     "Fighting": 0.5,
+     "Ground": 0,
+     "Grass": 0,
+     "Rock": 0,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 2,
+     "Dark": 0,
+     "Dragon": 2,
+     "Bug": 2,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 16,
+       "From": "Abra",
+       "To": "Kadabra"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Teleport",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 20,
+         "Description": "Does nothing.  Wild battles end immediately."
+       }
+     },
+     {
+       "Index": 0,
+       "Move": "Ally switch",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 15,
+         "Description": "User switches position on the field with the friendly Pokémon opposite it.  If the user is in the middle position in a triple battle, or there are no other friendly Pokémon, this move will fail."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 64,
+     "Name": "Kadabra",
+     "Types": [
+       "psychic"
+     ],
+     "HP": 40,
+     "Attack": 35,
+     "Defense": 30,
+     "Speed": 105,
+     "Sp_Atk": 120,
+     "Sp_Def": 70,
+     "Monster_Species": "Telekinesis Pokémon",
+     "Monster_Description": "It stares at its silver spoon to focus its mind. It emits more alpha waves while doing so."
+   },
+   "Profile": {
+     "Height": 1.3,
+     "Weight": 56.5,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       75,
+       25
+     ],
+     "Egg_Groups": [
+       "Human",
+       "Like"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Synchronize",
+       "Inner",
+       "focus",
+       "Magic",
+       "guard"
+     ],
+     "EVs": [
+       "2 Sp Att"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0,
+     "Electric": 0,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0.5,
+     "Fighting": 0.5,
+     "Ground": 0,
+     "Grass": 0,
+     "Rock": 0,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 2,
+     "Dark": 0,
+     "Dragon": 2,
+     "Bug": 2,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Kinesis",
+       "Type": {
+         "Power": -1,
+         "Acc": 80,
+         "PP": 15,
+         "Description": "Lowers the target's accuracy by one stage."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Teleport",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 20,
+         "Description": "Does nothing.  Wild battles end immediately."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 65,
+     "Name": "Alakazam",
+     "Types": [
+       "psychic"
+     ],
+     "HP": 55,
+     "Attack": 50,
+     "Defense": 45,
+     "Speed": 120,
+     "Sp_Atk": 135,
+     "Sp_Def": 95,
+     "Monster_Species": "Telekinesis Pokémon",
+     "Monster_Description": "The spoons clutched in its hands are said to have been created by its psychic powers."
+   },
+   "Profile": {
+     "Height": 1.5,
+     "Weight": 48,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       75,
+       25
+     ],
+     "Egg_Groups": [
+       "Human",
+       "Like"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Synchronize",
+       "Inner",
+       "focus",
+       "Magic",
+       "guard"
+     ],
+     "EVs": [
+       "3 Sp Att"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0,
+     "Electric": 0,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0.5,
+     "Fighting": 0.5,
+     "Ground": 0,
+     "Grass": 0,
+     "Rock": 0,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 2,
+     "Dark": 0,
+     "Dragon": 2,
+     "Bug": 2,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Kinesis",
+       "Type": {
+         "Power": -1,
+         "Acc": 80,
+         "PP": 15,
+         "Description": "Lowers the target's accuracy by one stage."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Teleport",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 20,
+         "Description": "Does nothing.  Wild battles end immediately."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 66,
+     "Name": "Machop",
+     "Types": [
+       "fighting"
+     ],
+     "HP": 70,
+     "Attack": 80,
+     "Defense": 50,
+     "Speed": 35,
+     "Sp_Atk": 35,
+     "Sp_Def": 35,
+     "Monster_Species": "Superhuman Strength Pokémon",
+     "Monster_Description": "Though small in stature, it is powerful enough to easily heft and throw a number of Geodude at once."
+   },
+   "Profile": {
+     "Height": 0.8,
+     "Weight": 19.5,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       75,
+       25
+     ],
+     "Egg_Groups": [
+       "Human",
+       "Like"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Guts",
+       "Steadfast",
+       "No",
+       "guard"
+     ],
+     "EVs": [
+       "1 Attack"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0,
+     "Electric": 0,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 2,
+     "Fairy": 2,
+     "Psychic": 2,
+     "Fighting": 0,
+     "Ground": 0,
+     "Grass": 0.5,
+     "Rock": 0.5,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0.5,
+     "Dragon": 0,
+     "Bug": 0.5,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 28,
+       "From": "Machop",
+       "To": "Machoke"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Karate chop",
+       "Type": {
+         "Power": 50,
+         "Acc": 100,
+         "PP": 25,
+         "Description": "Inflicts regular damage.  User's critical hit rate is one level higher when using this move."
+       }
+     },
+     {
+       "Index": 13,
+       "Move": "Low sweep",
+       "Type": {
+         "Power": 65,
+         "Acc": 100,
+         "PP": 20,
+         "Description": "Lowers the target's Speed by one stage."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 67,
+     "Name": "Machoke",
+     "Types": [
+       "fighting"
+     ],
+     "HP": 80,
+     "Attack": 100,
+     "Defense": 70,
+     "Speed": 45,
+     "Sp_Atk": 50,
+     "Sp_Def": 60,
+     "Monster_Species": "Superhuman Strength Pokémon",
+     "Monster_Description": "It happily carries heavy cargo to toughen up. It willingly does hard work for people."
+   },
+   "Profile": {
+     "Height": 1.5,
+     "Weight": 70.5,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       75,
+       25
+     ],
+     "Egg_Groups": [
+       "Human",
+       "Like"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Guts",
+       "Steadfast",
+       "No",
+       "guard"
+     ],
+     "EVs": [
+       "2 Attack"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0,
+     "Electric": 0,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 2,
+     "Fairy": 2,
+     "Psychic": 2,
+     "Fighting": 0,
+     "Ground": 0,
+     "Grass": 0.5,
+     "Rock": 0.5,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0.5,
+     "Dragon": 0,
+     "Bug": 0.5,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Low kick",
+       "Type": {
+         "Power": -1,
+         "Acc": 100,
+         "PP": 20,
+         "Description": "Inflicts regular damage.  Power increases with the target's weight in kilograms, to a maximum of 120.\n\nTarget's weight | Power\n--------------- | ----:\nUp to 10kg      |    20\nUp to 25kg      |    40\nUp to 50kg      |    60\nUp to 100kg     |    80\nUp to 200kg     |   100\nAbove 200kg     |   120\n"
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Leer",
+       "Type": {
+         "Power": -1,
+         "Acc": 100,
+         "PP": 30,
+         "Description": "Lowers the target's Defense by one stage."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 68,
+     "Name": "Machamp",
+     "Types": [
+       "fighting"
+     ],
+     "HP": 90,
+     "Attack": 130,
+     "Defense": 80,
+     "Speed": 55,
+     "Sp_Atk": 65,
+     "Sp_Def": 85,
+     "Monster_Species": "Superhuman Strength Pokémon",
+     "Monster_Description": "Its four muscled arms slam foes with powerful punches and chops at blinding speed."
+   },
+   "Profile": {
+     "Height": 1.6,
+     "Weight": 130,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       75,
+       25
+     ],
+     "Egg_Groups": [
+       "Human",
+       "Like"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Guts",
+       "Steadfast",
+       "No",
+       "guard"
+     ],
+     "EVs": [
+       "3 Attack"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0,
+     "Electric": 0,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 2,
+     "Fairy": 2,
+     "Psychic": 2,
+     "Fighting": 0,
+     "Ground": 0,
+     "Grass": 0.5,
+     "Rock": 0.5,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0.5,
+     "Dragon": 0,
+     "Bug": 0.5,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Wide guard",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 10,
+         "Description": "Moves with multiple targets will not hit friendly Pokémon for the remainder of this turn.  If the user is last to act this turn, this move will fail.\n\nThis move cannot be selected by assist or metronome."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Low kick",
+       "Type": {
+         "Power": -1,
+         "Acc": 100,
+         "PP": 20,
+         "Description": "Inflicts regular damage.  Power increases with the target's weight in kilograms, to a maximum of 120.\n\nTarget's weight | Power\n--------------- | ----:\nUp to 10kg      |    20\nUp to 25kg      |    40\nUp to 50kg      |    60\nUp to 100kg     |    80\nUp to 200kg     |   100\nAbove 200kg     |   120\n"
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 69,
+     "Name": "Bellsprout",
+     "Types": [
+       "grass",
+       "poison"
+     ],
+     "HP": 50,
+     "Attack": 75,
+     "Defense": 35,
+     "Speed": 40,
+     "Sp_Atk": 70,
+     "Sp_Def": 30,
+     "Monster_Species": "Flower Pokémon",
+     "Monster_Description": "It prefers hot and humid environments. It is quick at capturing prey with its vines."
+   },
+   "Profile": {
+     "Height": 0.7,
+     "Weight": 4,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Grass"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Chlorophyll",
+       "Gluttony"
+     ],
+     "EVs": [
+       "1 Attack"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 2,
+     "Electric": 0.5,
+     "Fire": 2,
+     "Water": 0.5,
+     "Flying": 2,
+     "Fairy": 0.5,
+     "Psychic": 2,
+     "Fighting": 0.5,
+     "Ground": 2,
+     "Grass": 0.25,
+     "Rock": 0,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 21,
+       "From": "Bellsprout",
+       "To": "Weepinbell"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Growth",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 20,
+         "Description": "Raises the user's Attack and Special Attack by one stage each.  During sunny-day, raises both stats by two stages."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Vine whip",
+       "Type": {
+         "Power": 45,
+         "Acc": 100,
+         "PP": 25,
+         "Description": "Inflicts regular damage."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 70,
+     "Name": "Weepinbell",
+     "Types": [
+       "grass",
+       "poison"
+     ],
+     "HP": 65,
+     "Attack": 90,
+     "Defense": 50,
+     "Speed": 55,
+     "Sp_Atk": 85,
+     "Sp_Def": 45,
+     "Monster_Species": "Flycatcher Pokémon",
+     "Monster_Description": "A Pokémon that appears to be a plant. It captures unwary prey by dousing them with a toxic powder."
+   },
+   "Profile": {
+     "Height": 1,
+     "Weight": 6.4,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Grass"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Chlorophyll",
+       "Gluttony"
+     ],
+     "EVs": [
+       "2 Attack"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 2,
+     "Electric": 0.5,
+     "Fire": 2,
+     "Water": 0.5,
+     "Flying": 2,
+     "Fairy": 0.5,
+     "Psychic": 2,
+     "Fighting": 0.5,
+     "Ground": 2,
+     "Grass": 0.25,
+     "Rock": 0,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Growth",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 20,
+         "Description": "Raises the user's Attack and Special Attack by one stage each.  During sunny-day, raises both stats by two stages."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Wrap",
+       "Type": {
+         "Power": 15,
+         "Acc": 90,
+         "PP": 20,
+         "Description": "Inflicts regular damage.  For the next 2–5 turns, the target cannot leave the field and is damaged for 1/16 its max HP at the end of each turn.  The user continues to use other moves during this time.  If the user leaves the field, this effect ends.\n\nHas a 3/8 chance each to hit 2 or 3 times, and a 1/8 chance each to hit 4 or 5 times.  Averages to 3 hits per use.\n\nrapid-spin cancels this effect."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 71,
+     "Name": "Victreebel",
+     "Types": [
+       "grass",
+       "poison"
+     ],
+     "HP": 80,
+     "Attack": 105,
+     "Defense": 65,
+     "Speed": 70,
+     "Sp_Atk": 100,
+     "Sp_Def": 70,
+     "Monster_Species": "Flycatcher Pokémon",
+     "Monster_Description": "It pools in its mouth a fluid with a honey-like scent, which is really an acid that dissolves anything."
+   },
+   "Profile": {
+     "Height": 1.7,
+     "Weight": 15.5,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Grass"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Chlorophyll",
+       "Gluttony"
+     ],
+     "EVs": [
+       "3 Attack"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 2,
+     "Electric": 0.5,
+     "Fire": 2,
+     "Water": 0.5,
+     "Flying": 2,
+     "Fairy": 0.5,
+     "Psychic": 2,
+     "Fighting": 0.5,
+     "Ground": 2,
+     "Grass": 0.25,
+     "Rock": 0,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Swallow",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 10,
+         "Description": "Heals the user depending on the amount of energy stored by stockpile: 1/4 its max HP after one use, 1/2 its max HP after two uses, or fully after three uses.  Stored energy is consumed, and the user's Defense and Special Defense are reset to what they would be if stockpile had not been used.  If the user has no energy stored, this move will fail."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Spit up",
+       "Type": {
+         "Power": -1,
+         "Acc": 100,
+         "PP": 10,
+         "Description": "Inflicts regular damage.  Power is equal to 100 times the amount of energy stored by stockpile.  Ignores the random factor in the damage formula.  Stored energy is consumed, and the user's Defense and Special Defense are reset to what they would be if stockpile had not been used.  If the user has no energy stored, this move will fail.\n\nThis move cannot be copied by mirror-move."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 72,
+     "Name": "Tentacool",
+     "Types": [
+       "water",
+       "poison"
+     ],
+     "HP": 40,
+     "Attack": 40,
+     "Defense": 35,
+     "Speed": 70,
+     "Sp_Atk": 50,
+     "Sp_Def": 100,
+     "Monster_Species": "Jellyfish Pokémon",
+     "Monster_Description": "Because its body is almost entirely composed of water, it shrivels up if it is washed ashore."
+   },
+   "Profile": {
+     "Height": 0.9,
+     "Weight": 45.5,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Water"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Clear",
+       "body",
+       "Rain",
+       "dish",
+       "Liquid",
+       "ooze"
+     ],
+     "EVs": [
+       "1 Sp Def"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 2,
+     "Fire": 0.5,
+     "Water": 0.5,
+     "Flying": 0,
+     "Fairy": 0.5,
+     "Psychic": 2,
+     "Fighting": 0.5,
+     "Ground": 2,
+     "Grass": 0,
+     "Rock": 0,
+     "Steel": 0.5,
+     "Poison": 0.5,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0.5,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 30,
+       "From": "Tentacool",
+       "To": "Tentacruel"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Acid",
+       "Type": {
+         "Power": 40,
+         "Acc": 100,
+         "PP": 30,
+         "Description": "Inflicts regular damage.  Has a 10% chance to lower the target's Special Defense by one stage."
+       }
+     },
+     {
+       "Index": 7,
+       "Move": "Supersonic",
+       "Type": {
+         "Power": -1,
+         "Acc": 55,
+         "PP": 20,
+         "Description": "Confuse the target."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 73,
+     "Name": "Tentacruel",
+     "Types": [
+       "water",
+       "poison"
+     ],
+     "HP": 80,
+     "Attack": 70,
+     "Defense": 65,
+     "Speed": 100,
+     "Sp_Atk": 80,
+     "Sp_Def": 120,
+     "Monster_Species": "Jellyfish Pokémon",
+     "Monster_Description": "It extends its 80 tentacles to form an encircling poisonous net that is difficult to escape."
+   },
+   "Profile": {
+     "Height": 1.6,
+     "Weight": 55,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Water"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Clear",
+       "body",
+       "Rain",
+       "dish",
+       "Liquid",
+       "ooze"
+     ],
+     "EVs": [
+       "2 Sp Def"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 2,
+     "Fire": 0.5,
+     "Water": 0.5,
+     "Flying": 0,
+     "Fairy": 0.5,
+     "Psychic": 2,
+     "Fighting": 0.5,
+     "Ground": 2,
+     "Grass": 0,
+     "Rock": 0,
+     "Steel": 0.5,
+     "Poison": 0.5,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0.5,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 30,
+       "From": "Tentacool",
+       "To": "Tentacruel"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Acid",
+       "Type": {
+         "Power": 40,
+         "Acc": 100,
+         "PP": 30,
+         "Description": "Inflicts regular damage.  Has a 10% chance to lower the target's Special Defense by one stage."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Supersonic",
+       "Type": {
+         "Power": -1,
+         "Acc": 55,
+         "PP": 20,
+         "Description": "Confuse the target."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 74,
+     "Name": "Geodude",
+     "Types": [
+       "rock",
+       "ground"
+     ],
+     "HP": 40,
+     "Attack": 80,
+     "Defense": 100,
+     "Speed": 20,
+     "Sp_Atk": 30,
+     "Sp_Def": 30,
+     "Monster_Species": "Rock Pokémon",
+     "Monster_Description": "At rest, it looks just like a rock. Carelessly stepping on it will make it swing its fists angrily."
+   },
+   "Profile": {
+     "Height": 0.4,
+     "Weight": 20,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Mineral"
+     ],
+     "Hatch_Steps": 3825,
+     "Abilities": [
+       "Sturdy",
+       "Sand",
+       "veil",
+       "Rock",
+       "head"
+     ],
+     "EVs": [
+       "1 Defense"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 2,
+     "Electric": 0,
+     "Fire": 0.5,
+     "Water": 4,
+     "Flying": 0.5,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 2,
+     "Ground": 0,
+     "Grass": 4,
+     "Rock": 0.5,
+     "Steel": 2,
+     "Poison": 0.25,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0.5
+   },
+   "Evolutions": [
+     {
+       "Level": 25,
+       "From": "Geodude",
+       "To": "Graveler"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Tackle",
+       "Type": {
+         "Power": 50,
+         "Acc": 100,
+         "PP": 35,
+         "Description": "Inflicts regular damage."
+       }
+     },
+     {
+       "Index": 6,
+       "Move": "Mud sport",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 15,
+         "Description": "electric moves inflict half damage, regardless of target.  If the user leaves the field, this effect ends."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 75,
+     "Name": "Graveler",
+     "Types": [
+       "rock",
+       "ground"
+     ],
+     "HP": 55,
+     "Attack": 95,
+     "Defense": 115,
+     "Speed": 35,
+     "Sp_Atk": 45,
+     "Sp_Def": 45,
+     "Monster_Species": "Rock Pokémon",
+     "Monster_Description": "It rolls on mountain paths to move. Once it builds momentum, no Pokémon can stop it without difficulty."
+   },
+   "Profile": {
+     "Height": 1,
+     "Weight": 105,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Mineral"
+     ],
+     "Hatch_Steps": 3825,
+     "Abilities": [
+       "Sturdy",
+       "Sand",
+       "veil",
+       "Rock",
+       "head"
+     ],
+     "EVs": [
+       "2 Defense"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 2,
+     "Electric": 0,
+     "Fire": 0.5,
+     "Water": 4,
+     "Flying": 0.5,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 2,
+     "Ground": 0,
+     "Grass": 4,
+     "Rock": 0.5,
+     "Steel": 2,
+     "Poison": 0.25,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0.5
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Rock polish",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 20,
+         "Description": "Raises the user's Speed by two stages."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Mud sport",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 15,
+         "Description": "electric moves inflict half damage, regardless of target.  If the user leaves the field, this effect ends."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 76,
+     "Name": "Golem",
+     "Types": [
+       "rock",
+       "ground"
+     ],
+     "HP": 80,
+     "Attack": 120,
+     "Defense": 130,
+     "Speed": 45,
+     "Sp_Atk": 55,
+     "Sp_Def": 65,
+     "Monster_Species": "Megaton Pokémon",
+     "Monster_Description": "Even dynamite cant harm its hard, boulder-like body. It sheds its hide just once a year."
+   },
+   "Profile": {
+     "Height": 1.4,
+     "Weight": 300,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Mineral"
+     ],
+     "Hatch_Steps": 3825,
+     "Abilities": [
+       "Sturdy",
+       "Sand",
+       "veil",
+       "Rock",
+       "head"
+     ],
+     "EVs": [
+       "3 Defense"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 2,
+     "Electric": 0,
+     "Fire": 0.5,
+     "Water": 4,
+     "Flying": 0.5,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 2,
+     "Ground": 0,
+     "Grass": 4,
+     "Rock": 0.5,
+     "Steel": 2,
+     "Poison": 0.25,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0.5
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Rock polish",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 20,
+         "Description": "Raises the user's Speed by two stages."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Mud sport",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 15,
+         "Description": "electric moves inflict half damage, regardless of target.  If the user leaves the field, this effect ends."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 77,
+     "Name": "Ponyta",
+     "Types": [
+       "fire"
+     ],
+     "HP": 50,
+     "Attack": 85,
+     "Defense": 55,
+     "Speed": 90,
+     "Sp_Atk": 65,
+     "Sp_Def": 65,
+     "Monster_Species": "Fire Horse Pokémon",
+     "Monster_Description": "As a newborn, it can barely stand. However, through galloping, its legs are made tougher and faster."
+   },
+   "Profile": {
+     "Height": 1,
+     "Weight": 30,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Field"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Flash",
+       "fire",
+       "Flame",
+       "body",
+       "Run",
+       "away"
+     ],
+     "EVs": [
+       "1 Speed"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 0,
+     "Fire": 0.5,
+     "Water": 2,
+     "Flying": 0,
+     "Fairy": 0.5,
+     "Psychic": 0,
+     "Fighting": 0,
+     "Ground": 2,
+     "Grass": 0,
+     "Rock": 2,
+     "Steel": 0.5,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 40,
+       "From": "Ponyta",
+       "To": "Rapidash"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Tackle",
+       "Type": {
+         "Power": 50,
+         "Acc": 100,
+         "PP": 35,
+         "Description": "Inflicts regular damage."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Ember",
+       "Type": {
+         "Power": 40,
+         "Acc": 100,
+         "PP": 25,
+         "Description": "Inflicts regular damage.  Has a 10% chance to burn the target."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 78,
+     "Name": "Rapidash",
+     "Types": [
+       "fire"
+     ],
+     "HP": 65,
+     "Attack": 100,
+     "Defense": 70,
+     "Speed": 105,
+     "Sp_Atk": 80,
+     "Sp_Def": 80,
+     "Monster_Species": "Fire Horse Pokémon",
+     "Monster_Description": "When at an all-out gallop, its blazing mane sparkles, enhancing its beautiful appearance."
+   },
+   "Profile": {
+     "Height": 1.7,
+     "Weight": 95,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Field"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Flash",
+       "fire",
+       "Flame",
+       "body",
+       "Run",
+       "away"
+     ],
+     "EVs": [
+       "2 Speed"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 0,
+     "Fire": 0.5,
+     "Water": 2,
+     "Flying": 0,
+     "Fairy": 0.5,
+     "Psychic": 0,
+     "Fighting": 0,
+     "Ground": 2,
+     "Grass": 0,
+     "Rock": 2,
+     "Steel": 0.5,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 40,
+       "From": "Ponyta",
+       "To": "Rapidash"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Poison jab",
+       "Type": {
+         "Power": 80,
+         "Acc": 100,
+         "PP": 20,
+         "Description": "Inflicts regular damage.  Has a 30% chance to poison the target."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Megahorn",
+       "Type": {
+         "Power": 120,
+         "Acc": 85,
+         "PP": 10,
+         "Description": "Inflicts regular damage."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 79,
+     "Name": "Slowpoke",
+     "Types": [
+       "psychic",
+       "water"
+     ],
+     "HP": 90,
+     "Attack": 65,
+     "Defense": 65,
+     "Speed": 15,
+     "Sp_Atk": 40,
+     "Sp_Def": 40,
+     "Monster_Species": "Stupid Pokémon",
+     "Monster_Description": "Although slow, it is skilled at fishing with its tail. It does not feel pain if its tail is bitten."
+   },
+   "Profile": {
+     "Height": 1.2,
+     "Weight": 36,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Monster",
+       "Water"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Oblivious",
+       "Own",
+       "tempo",
+       "Regenerator"
+     ],
+     "EVs": [
+       "1 HP"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 2,
+     "Fire": 0.5,
+     "Water": 0.5,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0.5,
+     "Fighting": 0.5,
+     "Ground": 0,
+     "Grass": 2,
+     "Rock": 0,
+     "Steel": 0.5,
+     "Poison": 0,
+     "Ghost": 2,
+     "Dark": 0,
+     "Dragon": 2,
+     "Bug": 2,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Yawn",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 10,
+         "Description": "Puts the target to sleep at the end of the next turn.  Ignores accuracy and evasion modifiers.  If the target leaves the field, this effect is canceled.  If the target has a status effect when this move is used, this move will fail.\n\nIf the target is protected by safeguard when this move is used, this move will fail.\n\ninsomnia and vital-spirit prevent the sleep if the target has either at the end of the next turn, but will not cause this move to fail on use."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Curse",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 10,
+         "Description": "If the user is a ghost: user pays half its max HP to place a curse on the target, damaging it for 1/4 its max HP every turn.\nOtherwise: Lowers the user's Speed by one stage, and raises its Attack and Defense by one stage each.\n\nThe curse effect is passed on by baton-pass.\n\nThis move cannot be copied by mirror-move."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 80,
+     "Name": "Slowbro",
+     "Types": [
+       "psychic",
+       "water"
+     ],
+     "HP": 95,
+     "Attack": 75,
+     "Defense": 110,
+     "Speed": 30,
+     "Sp_Atk": 100,
+     "Sp_Def": 80,
+     "Monster_Species": "Hermit Crab Pokémon",
+     "Monster_Description": "Though usually dim witted, it seems to become inspired if the Shellder on its tail bites down."
+   },
+   "Profile": {
+     "Height": 1.6,
+     "Weight": 78.5,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Monster",
+       "Water"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Oblivious",
+       "Own",
+       "tempo",
+       "Regenerator"
+     ],
+     "EVs": [
+       "2 Defense"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 2,
+     "Fire": 0.5,
+     "Water": 0.5,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0.5,
+     "Fighting": 0.5,
+     "Ground": 0,
+     "Grass": 2,
+     "Rock": 0,
+     "Steel": 0.5,
+     "Poison": 0,
+     "Ghost": 2,
+     "Dark": 0,
+     "Dragon": 2,
+     "Bug": 2,
+     "Normal": 0
+   },
+   "Evolutions": [
+     {
+       "Level": 37,
+       "From": "Slowpoke",
+       "To": "Slowbro"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Yawn",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 10,
+         "Description": "Puts the target to sleep at the end of the next turn.  Ignores accuracy and evasion modifiers.  If the target leaves the field, this effect is canceled.  If the target has a status effect when this move is used, this move will fail.\n\nIf the target is protected by safeguard when this move is used, this move will fail.\n\ninsomnia and vital-spirit prevent the sleep if the target has either at the end of the next turn, but will not cause this move to fail on use."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Curse",
+       "Type": {
+         "Power": -1,
+         "Acc": -1,
+         "PP": 10,
+         "Description": "If the user is a ghost: user pays half its max HP to place a curse on the target, damaging it for 1/4 its max HP every turn.\nOtherwise: Lowers the user's Speed by one stage, and raises its Attack and Defense by one stage each.\n\nThe curse effect is passed on by baton-pass.\n\nThis move cannot be copied by mirror-move."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 81,
+     "Name": "Magnemite",
+     "Types": [
+       "electric",
+       "steel"
+     ],
+     "HP": 25,
+     "Attack": 35,
+     "Defense": 70,
+     "Speed": 45,
+     "Sp_Atk": 95,
+     "Sp_Def": 55,
+     "Monster_Species": "Magnet Pokémon",
+     "Monster_Description": "The electromagnetic waves emitted by the units at the sides of its head expel antigravity, which allows it to float."
+   },
+   "Profile": {
+     "Height": 0.3,
+     "Weight": 6,
+     "Catch_Rate": 0,
+     "Gender_Ratio": null,
+     "Egg_Groups": [
+       "Mineral"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Sturdy",
+       "Magnet",
+       "pull",
+       "Analytic"
+     ],
+     "EVs": [
+       "1 Sp Att"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 0.5,
+     "Fire": 2,
+     "Water": 0,
+     "Flying": 0.25,
+     "Fairy": 0.5,
+     "Psychic": 0.5,
+     "Fighting": 2,
+     "Ground": 4,
+     "Grass": 0.5,
+     "Rock": 0.5,
+     "Steel": 0.25,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0.5,
+     "Bug": 0.5,
+     "Normal": 0.5
+   },
+   "Evolutions": [
+     {
+       "Level": 30,
+       "From": "Magnemite",
+       "To": "Magneton"
+     }
+   ],
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Metal sound",
+       "Type": {
+         "Power": -1,
+         "Acc": 85,
+         "PP": 40,
+         "Description": "Lowers the target's Special Defense by two stages."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Tackle",
+       "Type": {
+         "Power": 50,
+         "Acc": 100,
+         "PP": 35,
+         "Description": "Inflicts regular damage."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 82,
+     "Name": "Magneton",
+     "Types": [
+       "electric",
+       "steel"
+     ],
+     "HP": 50,
+     "Attack": 60,
+     "Defense": 95,
+     "Speed": 70,
+     "Sp_Atk": 120,
+     "Sp_Def": 70,
+     "Monster_Species": "Magnet Pokémon",
+     "Monster_Description": "The stronger electromagnetic waves from the three linked Magnemite are enough to dry out surrounding moisture."
+   },
+   "Profile": {
+     "Height": 1,
+     "Weight": 60,
+     "Catch_Rate": 0,
+     "Gender_Ratio": null,
+     "Egg_Groups": [
+       "Mineral"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Sturdy",
+       "Magnet",
+       "pull",
+       "Analytic"
+     ],
+     "EVs": [
+       "2 Sp Att"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 0.5,
+     "Electric": 0.5,
+     "Fire": 2,
+     "Water": 0,
+     "Flying": 0.25,
+     "Fairy": 0.5,
+     "Psychic": 0.5,
+     "Fighting": 2,
+     "Ground": 4,
+     "Grass": 0.5,
+     "Rock": 0.5,
+     "Steel": 0.25,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0.5,
+     "Bug": 0.5,
+     "Normal": 0.5
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Metal sound",
+       "Type": {
+         "Power": -1,
+         "Acc": 85,
+         "PP": 40,
+         "Description": "Lowers the target's Special Defense by two stages."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Thundershock",
+       "Type": {
+         "Power": 40,
+         "Acc": 100,
+         "PP": 30,
+         "Description": "Inflicts regular damage.  Has a 10% chance to paralyze the target."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
+ },
+{
+   "General": {
+     "Index": 83,
+     "Name": "Farfetch'd",
+     "Types": [
+       "flying",
+       "normal"
+     ],
+     "HP": 52,
+     "Attack": 65,
+     "Defense": 55,
+     "Speed": 60,
+     "Sp_Atk": 58,
+     "Sp_Def": 62,
+     "Monster_Species": "Spot-Billed Duck Pokémon",
+     "Monster_Description": "It cant live without the stalk it holds. Thats why it defends the stalk from attackers with its life."
+   },
+   "Profile": {
+     "Height": 0.8,
+     "Weight": 15,
+     "Catch_Rate": 0,
+     "Gender_Ratio": [
+       50,
+       50
+     ],
+     "Egg_Groups": [
+       "Flying",
+       "Field"
+     ],
+     "Hatch_Steps": 5100,
+     "Abilities": [
+       "Inner",
+       "focus",
+       "Keen",
+       "eye",
+       "Defiant"
+     ],
+     "EVs": [
+       "1 Attack"
+     ]
+   },
+   "DamgeWhenAttacked": {
+     "Ice": 2,
+     "Electric": 2,
+     "Fire": 0,
+     "Water": 0,
+     "Flying": 0,
+     "Fairy": 0,
+     "Psychic": 0,
+     "Fighting": 0,
+     "Ground": 0,
+     "Grass": 0.5,
+     "Rock": 2,
+     "Steel": 0,
+     "Poison": 0,
+     "Ghost": 0,
+     "Dark": 0,
+     "Dragon": 0,
+     "Bug": 0.5,
+     "Normal": 0
+   },
+   "Evolutions": null,
+   "Natural_Moves": [
+     {
+       "Index": 1,
+       "Move": "Poison jab",
+       "Type": {
+         "Power": 80,
+         "Acc": 100,
+         "PP": 20,
+         "Description": "Inflicts regular damage.  Has a 30% chance to poison the target."
+       }
+     },
+     {
+       "Index": 1,
+       "Move": "Peck",
+       "Type": {
+         "Power": 35,
+         "Acc": 100,
+         "PP": 35,
+         "Description": "Inflicts regular damage."
+       }
+     }
+   ],
+   "Machine_Move": null,
+   "Tutor_Move": null
  }

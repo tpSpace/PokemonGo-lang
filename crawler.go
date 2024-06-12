@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -17,7 +18,7 @@ import (
 	"github.com/chromedp/chromedp"
 )
 
-func Crawler() {
+func main() {
 	baseUrl := "https://pokedex.org/"
 	fmt.Println("Base url: " + baseUrl)
 
@@ -50,14 +51,14 @@ func Crawler() {
 		}
 	} else {
 		// Remove the last character ']' to continue appending
-		file.Seek(-1, os.SEEK_END)
+		file.Seek(-1, io.SeekEnd)
 	}
 
-	for i := 1; i <= 649; i++ {
+	for i := 62; i <= 649; i++ {
 		pokedex := newChromedp(baseUrl + "#/pokemon/" + strconv.Itoa(i))
 		
 		// Delay the request to avoid being blocked
-		time.Sleep(5 * time.Second)
+		time.Sleep(1 * time.Second)
 		
 		// Print the Pokémon's name for debugging purposes
 		fmt.Println(pokedex.General.Name)
@@ -100,8 +101,8 @@ func Crawler() {
 func newChromedp(url string) Pokemon.Pokemon {
 	// open the browser
 	opts := append(chromedp.DefaultExecAllocatorOptions[:],
-		chromedp.Flag("headless", true),
-		// chromedp.Flag("disable-gpu", false),
+		chromedp.Flag("headless", false),
+		chromedp.Flag("disable-gpu", true),
 	)
 	allocCtx, cancel := chromedp.NewExecAllocator(context.Background(), opts...)
 	defer cancel()
@@ -123,7 +124,7 @@ func newChromedp(url string) Pokemon.Pokemon {
 		chromedp.Navigate(url),
 		chromedp.Reload(),
 		// wait for the page to load
-		chromedp.Sleep(2000*time.Millisecond),
+		chromedp.Sleep(1000*time.Millisecond),
 		chromedp.WaitReady(`#detail-view-container`, chromedp.ByID),
 		
 		
@@ -221,7 +222,7 @@ func newChromedp(url string) Pokemon.Pokemon {
 				count++				
 			}
 			// get the damge when attacked data
-
+			chromedp.Sleep(1000*time.Millisecond)
 			const getDamageMultipliersScript = `(function() {
 				var multipliers = [];
 				var rows = document.querySelectorAll(".when-attacked-row");
@@ -308,6 +309,7 @@ func newChromedp(url string) Pokemon.Pokemon {
 			return data;
 		})();`
 		// Wait for the element to be visible
+		chromedp.Sleep(1000*time.Millisecond)
 		chromedp.WaitVisible(".evolution-row")
 		var evolutions []struct {
 			Level int
@@ -326,6 +328,7 @@ func newChromedp(url string) Pokemon.Pokemon {
 			return nil
 		}),
 		// chromedp.Sleep(5 * time.Second),
+		chromedp.Sleep(1000*time.Millisecond),
 		chromedp.WaitVisible(`div.monster-moves .moves-row`),    // Wait for the moves container to be visible
 		// get the natural moves data
 		chromedp.ActionFunc(func(ctx context.Context) error {
