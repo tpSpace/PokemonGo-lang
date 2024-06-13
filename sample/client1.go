@@ -104,6 +104,7 @@ func broadcasting(ctx context.Context, cancel context.CancelFunc, wg *sync.WaitG
 			select {
 			case <-ctx.Done(): // Checks if the context has been cancelled
 				fmt.Println("Stopping broadcasting due to cancellation.")
+				
 				return
 			default:
 				message := "pokemonGo-land:" + addrs[1].String() + ":" + strconv.Itoa(randomNum) + ":end"
@@ -134,13 +135,29 @@ func broadcasting(ctx context.Context, cancel context.CancelFunc, wg *sync.WaitG
 				continue
 			}
 			message := string(buffer[:n])
+			
+			// Check if the message contains the random number
 			randomNumber, _ := strconv.Atoi(message[strings.Index(message, ":")+16 : strings.Index(message, ":end")])
+			fmt.Println(randomNum)
+			fmt.Println(randomNumber)
 			if randomNumber == randomNum {
 				continue
 			}
 			// Get the IP from the message and save it to data channel
 			data <- message[15 : len(message)-4]
 			fmt.Printf("Received '%s' from %s\n", string(buffer[:n]), addr.String())
+			// send a message to other clients to stop broadcasting and listening
+			for i:= 0; i < 1; i++ {
+				message := "pokemonGo-land:" + addrs[1].String() + ":" + strconv.Itoa(randomNum) + ":end"
+				// Let's broadcast the TCP connection to the client
+				_, err := conn.WriteTo([]byte(message), bcastAddr)
+				if err != nil {
+					fmt.Printf("Error broadcasting: %s\n", err)
+					continue
+				}
+				fmt.Println("Broadcasted message:", message)
+				time.Sleep(1 * time.Second)
+			}
 			cancel()
 		}
 	}
