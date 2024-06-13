@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"net"
 	"os"
+	"strconv"
 	"strings"
 	"syscall"
 	"time"
@@ -11,7 +13,15 @@ import (
 	"golang.org/x/sys/unix"
 )
 
+var randomNum int
+
 func main() {
+	// gernate random number
+
+	rand.New(rand.NewSource(time.Now().UnixNano()))
+	// get random number
+	randomNum = rand.Intn(100)
+
 	// Create the socket
 	fd, err := syscall.Socket(syscall.AF_INET, syscall.SOCK_DGRAM, syscall.IPPROTO_UDP)
 	if err != nil {
@@ -57,9 +67,18 @@ func main() {
 	bcastAddr := &net.UDPAddr{IP: net.IPv4bcast, Port: 3000}
 
 	// Start a goroutine to broadcast messages
+			addrs, err := net.InterfaceAddrs()
+			if err != nil {
+				fmt.Println("Error getting machine IP address:", err)
+				os.Exit(1)
+			}
 	go func() {
 		for {
-			message := "Hello fro broadcast!"
+			// get the current ip address
+			
+			message := "pokemonGo-land:" + addrs[1].String() +":"+strconv.Itoa(randomNum)+ ":end"
+			// let's broadcast the tcp conenction to the client
+			
 			_, err := conn.WriteTo([]byte(message), bcastAddr)
 			if err != nil {
 				fmt.Printf("Error broadcasting: %s\n", err)
@@ -75,7 +94,9 @@ func main() {
 	fmt.Println("Listening on UDP port 3000")
 	for {
 		n, addr, err := conn.ReadFrom(buffer)
-		if strings.Contains(string(buffer[:n]), "Hello fro broadcast!") {
+		// ip, err := net.InterfaceAddrs()
+		message := string(buffer[:n])
+		if strings.Contains(message[15:len(message)-4],strconv.Itoa(randomNum) ) {
 			continue
 		}
 		if err != nil {
