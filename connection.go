@@ -22,12 +22,22 @@ const (
 	udpPort = "3000"
 )
 func Connection() {
+
+	if len(os.Args) < 3 {
+		fmt.Println("Usage: go run p2p.go <server|client> <port|address:port>")
+		return
+	}
+
+	mode := os.Args[1]
+	arg := os.Args[2]
+
+	
+
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel() // Ensure cancellation is called to free resources if main exits
 
 	fmt.Println("Hello, playground")
 	// Start TCP server in a goroutine and broadcast the TCP server's address
-	port := 8080
 	var wg sync.WaitGroup
 
 	wg.Add(1)
@@ -37,16 +47,79 @@ func Connection() {
 
 	// Wait for the broadcasting goroutine to finish
 	wg.Wait()
-	StartTCPServer(port)
+	// Start the TCP server and connect to the peer
+	if mode == "server" {
+		startServer(arg)
+	} else if mode == "client" {
+		startClient()
+	} else {
+		fmt.Println("Invalid mode. Use 'server' or 'client'.")
+	}
+	
+	// select{}
 	fmt.Println("Main function exiting.")
 }
+// TCP server
+func setReusePort(conn *net.TCPListener) error {
+	file, err := conn.File()
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	fd := int(file.Fd())
+	err = unix.SetsockoptInt(fd, unix.SOL_SOCKET, unix.SO_REUSEPORT, 1)
+	if err != nil {
+		return err
+	}
+	return nil
+}
 
-func StartTCPServer(port int) {
-	fmt.Println("TCP server listening on", port)
-	// Create a TCP listener
-	// get ip address from data channel
-	// get the current ip address of the machine
-	// netip, eer := net.InterfaceAddrs()
+func handleConnection(conn net.Conn) {
+	defer conn.Close()
+	buffer := make([]byte, 1024)
+	for {
+		n, err := conn.Read(buffer)
+		if err != nil {
+			fmt.Println("Connection closed:", err)
+			return
+		}
+		fmt.Println("Received:", string(buffer[:n]))
+		conn.Write([]byte("Message received"))
+	}
+}
+
+func startServer(port string) {
+
+	addr, err := net.ResolveTCPAddr("tcp", ":"+port)
+	if err != nil {
+		fmt.Println("Error resolving address:", err)
+		return
+	}
+
+	listener, err := net.ListenTCP("tcp", addr)
+	if err != nil {
+		fmt.Println("Error starting server:", err)
+		return
+	}
+
+	if err := setReusePort(listener); err != nil {
+		fmt.Println("Error setting SO_REUSEPORT:", err)
+		return
+	}
+
+	fmt.Println("Server started on port", port)
+	for {
+		conn, err := listener.Accept()
+		if err != nil {
+			fmt.Println("Error accepting connection:", err)
+			continue
+		}
+		go handleConnection(conn)
+	}
+}
+
+func startClient() {
+	
 	preData := <-data
 
 	parts := strings.Split(preData, ":")
@@ -54,15 +127,49 @@ func StartTCPServer(port int) {
 		fmt.Println("Invalid data format")
 		return
 	}
-	ip := parts[0]
+	ipWithSubnet := parts[0]
 	port_remote := parts[1]
+
+	// Split the IP address and subnet
+	ipParts := strings.Split(ipWithSubnet, "/")
+	if len(ipParts) < 2 {
+		fmt.Println("Invalid IP format")
+		return
+	}
+	ip := ipParts[0] // This is the IP address without the subnet
 
 	fmt.Println("IP: ", ip)
 	fmt.Println("Port: ", port_remote)
-	fmt.Println("IP address & port:", preData)
-	
+	fmt.Println("IP address & port:", ip + ":" + port_remote)
+	address := ip + ":" + port_remote
+	conn, err := net.Dial("tcp", address)
+	if err != nil {
+		fmt.Println("Error connecting to server:", err)
+		return
+	}
+	defer conn.Close()
+
+	fmt.Println("Connected to server:", address)
+	for {
+		_, err := conn.Write([]byte("Hello from client"))
+		if err != nil {
+			fmt.Println("Error writing to connection:", err)
+			return
+		}
+
+		buffer := make([]byte, 1024)
+		n, err := conn.Read(buffer)
+		if err != nil {
+			fmt.Println("Error reading from connection:", err)
+			return
+		}
+		fmt.Println("Received:", string(buffer[:n]))
+
+		time.Sleep(2 * time.Second)
+	}
 }
 
+// UDP Broadcasting
 func broadcasting(ctx context.Context, cancel context.CancelFunc, wg *sync.WaitGroup) {
 	defer wg.Done()
 
