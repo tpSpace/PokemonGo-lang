@@ -17,7 +17,10 @@ import (
 
 var randomNum int
 var data = make(chan string, 1)
-
+const (
+	tcpPort = "8080"
+	udpPort = "3000"
+)
 func main() {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel() // Ensure cancellation is called to free resources if main exits
@@ -40,6 +43,24 @@ func main() {
 
 func StartTCPServer(port int) {
 	fmt.Println("TCP server listening on", port)
+	// Create a TCP listener
+	// get ip address from data channel
+	// get the current ip address of the machine
+	// netip, eer := net.InterfaceAddrs()
+	preData := <-data
+
+	parts := strings.Split(preData, ":")
+	if len(parts) < 2 {
+		fmt.Println("Invalid data format")
+		return
+	}
+	ip := parts[0]
+	port_remote := parts[1]
+
+	fmt.Println("IP: ", ip)
+	fmt.Println("Port: ", port_remote)
+	fmt.Println("IP address & port:", preData)
+	
 }
 
 func broadcasting(ctx context.Context, cancel context.CancelFunc, wg *sync.WaitGroup) {
@@ -107,7 +128,7 @@ func broadcasting(ctx context.Context, cancel context.CancelFunc, wg *sync.WaitG
 				
 				return
 			default:
-				message := "pokemonGo-land:" + addrs[1].String() + ":" + strconv.Itoa(randomNum) + ":end"
+				message := "pokemonGo-land:" + addrs[1].String() + ":"+ tcpPort +":"+ strconv.Itoa(randomNum) + ":end"
 				// Let's broadcast the TCP connection to the client
 				_, err := conn.WriteTo([]byte(message), bcastAddr)
 				if err != nil {
@@ -137,7 +158,7 @@ func broadcasting(ctx context.Context, cancel context.CancelFunc, wg *sync.WaitG
 			message := string(buffer[:n])
 			
 			// Check if the message contains the random number
-			randomNumber, _ := strconv.Atoi(message[strings.Index(message, ":")+16 : strings.Index(message, ":end")])
+			randomNumber, _ := strconv.Atoi(message[strings.Index(message, ":")+21 : strings.Index(message, ":end")])
 			fmt.Println(randomNum)
 			fmt.Println(randomNumber)
 			if randomNumber == randomNum {
@@ -147,8 +168,8 @@ func broadcasting(ctx context.Context, cancel context.CancelFunc, wg *sync.WaitG
 			data <- message[15 : len(message)-4]
 			fmt.Printf("Received '%s' from %s\n", string(buffer[:n]), addr.String())
 			// send a message to other clients to stop broadcasting and listening
-			for i:= 0; i < 1; i++ {
-				message := "pokemonGo-land:" + addrs[1].String() + ":" + strconv.Itoa(randomNum) + ":end"
+			for i:= 0; i < 2; i++ {
+				message := "pokemonGo-land:" + addrs[1].String() + ":"+ tcpPort +":"+ strconv.Itoa(randomNum) + ":end"
 				// Let's broadcast the TCP connection to the client
 				_, err := conn.WriteTo([]byte(message), bcastAddr)
 				if err != nil {
