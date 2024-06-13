@@ -137,7 +137,6 @@ func login(username string, password string) bool {
     return false
 }
 
-
 func register(username, password string) {
     // Read data from the JSON file
     file, err := os.Open("user.json")

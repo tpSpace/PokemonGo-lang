@@ -14,7 +14,23 @@ import (
 
 	"golang.org/x/sys/unix"
 )
+type Pokemon struct {
+	Name               string
+	Level              int
+	BaseExp            int
+	HP                 int
+	Attack             int
+	Defense            int
+	SpecialAttack      int
+	SpecialDefense     int
+	Speed              int
+	ElementalMultiplier float64
+}
 
+type Player struct {
+	Name    string
+	Pokemons []Pokemon
+}
 var randomNum int
 var data = make(chan string, 1)
 const (
@@ -22,12 +38,39 @@ const (
 	udpPort = "3000"
 )
 func main() {
+	// Define two sample players with 3 Pokémon each
+	player1 := Player{
+		Name: "Ash",
+		Pokemons: []Pokemon{
+			{Name: "Pikachu", Level: 5, BaseExp: 112, HP: 35, Attack: 55, Defense: 40, SpecialAttack: 50, SpecialDefense: 50, Speed: 90, ElementalMultiplier: 1.2},
+			{Name: "Bulbasaur", Level: 5, BaseExp: 64, HP: 45, Attack: 49, Defense: 49, SpecialAttack: 65, SpecialDefense: 65, Speed: 45, ElementalMultiplier: 1.0},
+			{Name: "Charmander", Level: 5, BaseExp: 62, HP: 39, Attack: 52, Defense: 43, SpecialAttack: 60, SpecialDefense: 50, Speed: 65, ElementalMultiplier: 1.1},
+		},
+	}
+
+	player2 := Player{
+		Name: "Gary",
+		Pokemons: []Pokemon{
+			{Name: "Squirtle", Level: 5, BaseExp: 63, HP: 44, Attack: 48, Defense: 65, SpecialAttack: 50, SpecialDefense: 64, Speed: 43, ElementalMultiplier: 1.0},
+			{Name: "Pidgey", Level: 5, BaseExp: 50, HP: 40, Attack: 45, Defense: 40, SpecialAttack: 35, SpecialDefense: 35, Speed: 56, ElementalMultiplier: 1.0},
+			{Name: "Rattata", Level: 5, BaseExp: 51, HP: 30, Attack: 56, Defense: 35, SpecialAttack: 25, SpecialDefense: 35, Speed: 72, ElementalMultiplier: 1.0},
+		},
+	}
+	if len(os.Args) < 3 {
+		fmt.Println("Usage: go run p2p.go <server|client> <port|address:port>")
+		return
+	}
+
+	mode := os.Args[1]
+	// arg := os.Args[2]
+
+	
+
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel() // Ensure cancellation is called to free resources if main exits
 
 	fmt.Println("Hello, playground")
 	// Start TCP server in a goroutine and broadcast the TCP server's address
-	port := 8080
 	var wg sync.WaitGroup
 
 	wg.Add(1)
@@ -37,16 +80,36 @@ func main() {
 
 	// Wait for the broadcasting goroutine to finish
 	wg.Wait()
-	StartTCPServer(port)
+	// time.Sleep(2 * time.Second)
+	// Start the TCP server and connect to the peer
+	if mode == "server" {
+		startServer(player1)
+	} else if mode == "client" {
+		startClient(player2)
+	} else {
+		fmt.Println("Invalid mode. Use 'server' or 'client'.")
+	}
+	
+	// select{}
 	fmt.Println("Main function exiting.")
 }
+// TCP server
+func setReusePort(conn *net.TCPListener) error {
+	file, err := conn.File()
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	fd := int(file.Fd())
+	err = unix.SetsockoptInt(fd, unix.SOL_SOCKET, unix.SO_REUSEPORT, 1)
+	if err != nil {
+		return err
+	}
+	return nil
+}
 
-func StartTCPServer(port int) {
-	fmt.Println("TCP server listening on", port)
-	// Create a TCP listener
-	// get ip address from data channel
-	// get the current ip address of the machine
-	// netip, eer := net.InterfaceAddrs()
+func startClient(player Player) {
+	
 	preData := <-data
 
 	parts := strings.Split(preData, ":")
@@ -54,15 +117,190 @@ func StartTCPServer(port int) {
 		fmt.Println("Invalid data format")
 		return
 	}
-	ip := parts[0]
+	ipWithSubnet := parts[0]
 	port_remote := parts[1]
+
+	// Split the IP address and subnet
+	ipParts := strings.Split(ipWithSubnet, "/")
+	if len(ipParts) < 2 {
+		fmt.Println("Invalid IP format")
+		return
+	}
+	ip := ipParts[0] // This is the IP address without the subnet
 
 	fmt.Println("IP: ", ip)
 	fmt.Println("Port: ", port_remote)
-	fmt.Println("IP address & port:", preData)
-	
+	fmt.Println("IP address & port:", ip + ":" + port_remote)
+	address := ip + ":" + port_remote
+	conn, err := net.Dial("tcp", address)
+	if err != nil {
+		fmt.Println("Error connecting to s--erver:", err)
+		return
+	}
+	defer conn.Close()
+
+	fmt.Println("Connected to server:", address)
+	state := 0 
+	var poke Pokemon
+
+	for {
+		// we will devide the connection into 2 state: first state is decide which player play first and second state is the game
+		// first state
+			
+		if state == 0 {
+			// we will send the fastest pokemon to play first
+			max :=-1
+			for _, pokemon := range player.Pokemons {
+				// we will send the fastest pokemon to play first
+				if pokemon.Speed > max {
+					max = pokemon.Speed
+					poke = pokemon
+				}
+			}
+			// send
+			_, err := conn.Write([]byte("state:0:"+strconv.Itoa(poke.Speed)))
+			if err != nil {
+				fmt.Println("Error writing to connection:", err)
+				return
+			}
+			buffer := make([]byte, 1024)
+			n, err := conn.Read(buffer)
+			if err != nil {
+				fmt.Println("Error reading from connection:", err)
+				return
+			}
+			fmt.Println("Received:", string(buffer[:n]))
+			
+			time.Sleep(2 * time.Second)
+			message := buffer[:n]
+			split := strings.Split(string(message), ":")
+			state, _ = strconv.Atoi(split[1])
+
+		} else if state == 2 {
+			// we will send the fastest pokemon to play first
+			// max :=-1
+			fmt.Println("Choose your pokemon to play first")
+			for i, pokemon := range player.Pokemons {
+				fmt.Println(i, pokemon.Name)
+			}
+			var index int
+			fmt.Scanln(&index)
+			poke = player.Pokemons[index]
+			// send
+			_, err := conn.Write([]byte("state:2:"+poke.Name))
+			if err != nil {
+				fmt.Println("Error writing to connection:", err)
+				return
+			}
+			buffer := make([]byte, 1024)
+			n, err := conn.Read(buffer)
+			if err != nil {
+				fmt.Println("Error reading from connection:", err)
+				return
+			}
+			fmt.Println("Received:", string(buffer[:n]))
+		}
+	}
 }
 
+func handleConnection(conn net.Conn, player Player) {
+	defer conn.Close()
+	buffer := make([]byte, 1024)
+	
+	max :=-1
+	var poke Pokemon
+	for {
+		// we will devide the connection into 2 state: first state is decide which player play first and second state is the game
+		// first state
+		// we will send the fastest pokemon to play first to over come the first state and decide which player play first
+		// second state
+		n, err := conn.Read(buffer)
+		if err != nil {
+			fmt.Println("Connection closed:", err)
+			return
+		}
+		fmt.Println("Received:", string(buffer[:n]))
+		message := buffer[:n]
+		split := strings.Split(string(message), ":")
+		state, _ := strconv.Atoi(split[1])
+		
+		if state == 0 {
+			// we will send the fastest pokemon to play first
+			for _, pokemon := range player.Pokemons {
+				// we will send the fastest pokemon to play first
+				if pokemon.Speed > max {
+					max = pokemon.Speed
+					poke = pokemon
+				}
+			}
+			speed, _ := strconv.Atoi(split[2])
+			if max < speed {
+				_, err := conn.Write([]byte("state:2:server"))
+				if err != nil {
+					fmt.Println("Error writing to connection:", err)
+					return
+				}
+			} else {
+				conn.Write([]byte("state:2:" + strconv.Itoa(poke.Speed)))
+			}
+			// send
+		} else if state == 2 {
+			fmt.Println("Choose your pokemon to play first")
+			for i, pokemon := range player.Pokemons {
+				fmt.Println(i, pokemon.Name)
+			}
+			var index int
+			fmt.Scanln(&index)
+			poke = player.Pokemons[index]
+			// send
+			_, err := conn.Write([]byte("state:2:"+poke.Name))
+			if err != nil {
+				fmt.Println("Error writing to connection:", err)
+				return
+			}
+			buffer := make([]byte, 1024)
+			n, err := conn.Read(buffer)
+			if err != nil {
+				fmt.Println("Error reading from connection:", err)
+				return
+			}
+			fmt.Println("Received:", string(buffer[:n]))
+		}
+	}
+}
+
+func startServer(player Player) {
+	port := "8080"
+	addr, err := net.ResolveTCPAddr("tcp", ":"+port)
+	if err != nil {
+		fmt.Println("Error resolving address:", err)
+		return
+	}
+
+	listener, err := net.ListenTCP("tcp", addr)
+	if err != nil {
+		fmt.Println("Error starting server:", err)
+		return
+	}
+
+	if err := setReusePort(listener); err != nil {
+		fmt.Println("Error setting SO_REUSEPORT:", err)
+		return
+	}
+
+	fmt.Println("Server started on port", port)
+	for {
+		conn, err := listener.Accept()
+		if err != nil {
+			fmt.Println("Error accepting connection:", err)
+			continue
+		}
+		go handleConnection(conn, player)
+	}
+}
+
+
+// UDP Broadcasting
 func broadcasting(ctx context.Context, cancel context.CancelFunc, wg *sync.WaitGroup) {
 	defer wg.Done()
 
