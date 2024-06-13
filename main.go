@@ -14,7 +14,7 @@ import (
 )
 
 var logined bool = false
-var user User.User 
+var gUser User.User 
 func main() {
     // print out "Welcome to PokemonGo-land" in terminal ascii art style
     banner()
@@ -73,10 +73,8 @@ func main() {
             switch choice {
             case 1:
                 Connection()
-                break
             case 2:
                 Inventory()
-                break
             case 3:
                 // CatchPokemon()
                 break
@@ -132,7 +130,7 @@ func login(username string, password string) bool {
     // load the user data to global variable
     for _, user := range users {
         if user.Username == username {
-            user = user
+            gUser = user
         }
     }
     fmt.Println("Login failed: Username not found")
@@ -215,7 +213,7 @@ func Inventory() {
     // print out the user's inventory
     fmt.Println("Inventory")
     fmt.Println("---------")
-    for i, pokemon := range user.Inventory {
+    for i, pokemon := range gUser.Inventory {
         fmt.Printf("%d. %s\n", i+1, pokemon.General.Name)
     }
 }
