@@ -14,7 +14,7 @@ import (
 )
 
 var logined bool = false
-
+var user User.User 
 func main() {
     // print out "Welcome to PokemonGo-land" in terminal ascii art style
     banner()
@@ -63,22 +63,22 @@ func main() {
             // clear screen
             clearScreen()
             fmt.Println("Welcome back to PokemonGo-land!")
-            fmt.Println("1. Catch Pokemon")
+            fmt.Println("1. PokeBat")
             fmt.Println("2. Inventory")
-            fmt.Println("3. Battle")
+            fmt.Println("3. PokeCat")
             fmt.Println("4. Exit")
             choice := 0
             fmt.Print("Please enter your choice: ")
             fmt.Scanln(&choice)
             switch choice {
             case 1:
-                // CatchPokemon()
+                Connection()
                 break
             case 2:
-                // Inventory()
+                Inventory()
                 break
             case 3:
-                // Battle()
+                // CatchPokemon()
                 break
             case 4:
                 fmt.Println("Goodbye!")
@@ -87,7 +87,6 @@ func main() {
                 fmt.Println("Invalid choice")
                 fmt.Println("Going back to main menu")
                 time.Sleep(2 * time.Second)
-
             }
             // Connection()
             // break
@@ -130,7 +129,12 @@ func login(username string, password string) bool {
             }
         }
     }
-
+    // load the user data to global variable
+    for _, user := range users {
+        if user.Username == username {
+            user = user
+        }
+    }
     fmt.Println("Login failed: Username not found")
     return false
 }
@@ -205,4 +209,13 @@ func clearScreen() {
     cmd := exec.Command("clear")
     cmd.Stdout = os.Stdout
     cmd.Run()
+}
+
+func Inventory() {
+    // print out the user's inventory
+    fmt.Println("Inventory")
+    fmt.Println("---------")
+    for i, pokemon := range user.Inventory {
+        fmt.Printf("%d. %s\n", i+1, pokemon.General.Name)
+    }
 }
