@@ -5,7 +5,8 @@ go 1.21.10
 require (
 	github.com/chromedp/cdproto v0.0.0-20240524221637-55927c2a4565
 	github.com/chromedp/chromedp v0.9.5
-	golang.org/x/sys v0.20.0
+	golang.org/x/crypto v0.24.0
+	golang.org/x/sys v0.21.0
 )
 
 require github.com/orisano/pixelmatch v0.0.0-20230914042517-fa304d1dc785 // indirect

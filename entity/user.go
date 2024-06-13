@@ -1,8 +1,9 @@
 package Entity
 
 type User struct {
-	Id string
-	Username string
-	Password string
-	Collection []Pokemon
+    Username string `json:"username"`
+    Password string `json:"password"`
+	Inventory []Pokemon `json:"inventory"`
 }
+
+

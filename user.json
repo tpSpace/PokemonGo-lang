@@ -1,0 +1,9 @@
+[
+  { "username": "admin", "password": "admin", "inventory": null },
+  { "username": "user1", "password": "password1", "inventory": null },
+  {
+    "username": "khoi",
+    "password": "$2a$10$c3g129wIMUdqj7iLElnEuOnEGVJC74Bd2xttfZ8EX8BERs2ZH7Bk2",
+    "inventory": []
+  }
+]
