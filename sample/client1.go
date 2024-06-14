@@ -33,6 +33,7 @@ type Player struct {
 }
 var randomNum int
 var data = make(chan string, 1)
+// var state = 0
 const (
 	tcpPort = "8080"
 	udpPort = "3000"
@@ -140,132 +141,214 @@ func startClient(player Player) {
 	defer conn.Close()
 
 	fmt.Println("Connected to server:", address)
-	state := 0 
-	var poke Pokemon
-
+	state_client := 0
+	var activePoke Pokemon
 	for {
-		// we will devide the connection into 2 state: first state is decide which player play first and second state is the game
-		// first state
-			
-		if state == 0 {
-			// we will send the fastest pokemon to play first
-			max :=-1
-			for _, pokemon := range player.Pokemons {
-				// we will send the fastest pokemon to play first
-				if pokemon.Speed > max {
-					max = pokemon.Speed
-					poke = pokemon
-				}
-			}
-			// send
-			_, err := conn.Write([]byte("state:0:"+strconv.Itoa(poke.Speed)))
-			if err != nil {
-				fmt.Println("Error writing to connection:", err)
-				return
-			}
-			buffer := make([]byte, 1024)
-			n, err := conn.Read(buffer)
-			if err != nil {
-				fmt.Println("Error reading from connection:", err)
-				return
-			}
-			fmt.Println("Received:", string(buffer[:n]))
-			
-			time.Sleep(2 * time.Second)
-			message := buffer[:n]
-			split := strings.Split(string(message), ":")
-			state, _ = strconv.Atoi(split[1])
-
-		} else if state == 2 {
-			// we will send the fastest pokemon to play first
-			// max :=-1
-			fmt.Println("Choose your pokemon to play first")
-			for i, pokemon := range player.Pokemons {
-				fmt.Println(i, pokemon.Name)
-			}
-			var index int
-			fmt.Scanln(&index)
-			poke = player.Pokemons[index]
-			// send
-			_, err := conn.Write([]byte("state:2:"+poke.Name))
-			if err != nil {
-				fmt.Println("Error writing to connection:", err)
-				return
-			}
-			buffer := make([]byte, 1024)
-			n, err := conn.Read(buffer)
-			if err != nil {
-				fmt.Println("Error reading from connection:", err)
-				return
-			}
-			fmt.Println("Received:", string(buffer[:n]))
-		}
-	}
-}
-
-func handleConnection(conn net.Conn, player Player) {
-	defer conn.Close()
-	buffer := make([]byte, 1024)
-	
-	max :=-1
-	var poke Pokemon
-	for {
-		// we will devide the connection into 2 state: first state is decide which player play first and second state is the game
-		// first state
-		// we will send the fastest pokemon to play first to over come the first state and decide which player play first
-		// second state
-		n, err := conn.Read(buffer)
-		if err != nil {
-			fmt.Println("Connection closed:", err)
-			return
-		}
-		fmt.Println("Received:", string(buffer[:n]))
-		message := buffer[:n]
-		split := strings.Split(string(message), ":")
-		state, _ := strconv.Atoi(split[1])
 		
-		if state == 0 {
-			// we will send the fastest pokemon to play first
-			for _, pokemon := range player.Pokemons {
-				// we will send the fastest pokemon to play first
-				if pokemon.Speed > max {
-					max = pokemon.Speed
-					poke = pokemon
-				}
+		if state_client == 0 {
+			// send the fastest pokemon to the server
+			fastest := fastestPokemon(player.Pokemons)
+			activePoke = fastest
+			_, err = conn.Write([]byte(strconv.Itoa(fastest.Speed)))
+			if err != nil {
+				fmt.Println("Error writing to server:", err)
+				return
 			}
-			speed, _ := strconv.Atoi(split[2])
-			if max < speed {
-				_, err := conn.Write([]byte("state:2:server"))
+			fmt.Println("Sent:", fastest.Speed)
+			// Read the server's response
+			buffer := make([]byte, 1024)
+			_, err = conn.Read(buffer)
+			if err != nil {
+				fmt.Println("Error reading from server:", err)
+				return
+			}
+			fmt.Println("Received:", string(buffer))
+			state_client, _ = strconv.Atoi(string(buffer[0]))
+			fmt.Println("State:", state_client)
+			time.Sleep(1 * time.Second)
+		} else if state_client == 1 {
+			fmt.Println("State 1")
+			// Read the server's response
+			buffer := make([]byte, 1024)
+			_, err := conn.Read(buffer)
+			if err != nil {
+				fmt.Println("Error reading from server:", err)
+				return
+			}
+			fmt.Println("Received:", string(buffer))
+			// get the attack power of the pokemon
+			attack := string(buffer)
+			attackParts := strings.Split(attack, ":")
+			if attackParts[0] == "normalAttak" {
+				fmt.Println("Normal Attack")
+				fmt.Println("Attack Power:", attackParts[1])
+				// minus the attack powerint from the pokemon's HP
+				attackPower, err := strconv.ParseFloat(attackParts[1], 64)
+				if err != nil {
+					fmt.Println("Error converting attack power to float:", err)
+					return // or handle the error appropriately
+				}
+				activePoke.HP = activePoke.HP- int(attackPower)
+				fmt.Println("HP:", activePoke.HP)
+			} else {
+				fmt.Println("Special Attack")
+				fmt.Println("Attack Power:", attackParts[1])
+			}
+			// send the state to the server
+			for _, pokemon := range player.Pokemons {
+				fmt.Println(pokemon.Name)
+			}
+			var choice int
+			fmt.Println("Choose the pokemon to fight")
+			fmt.Scan(&choice)
+			// send the attack power of the pokemon to the client
+
+			atk, isNormalAttack := randomMove(player.Pokemons[choice])
+			if isNormalAttack {
+				_, err := conn.Write([]byte("normalAttak:"+strconv.Itoa(int(atk))))
 				if err != nil {
 					fmt.Println("Error writing to connection:", err)
 					return
 				}
 			} else {
-				conn.Write([]byte("state:2:" + strconv.Itoa(poke.Speed)))
+				attack := int(atk)
+				_, err := conn.Write([]byte("specialAttack:"+strconv.Itoa(attack)))
+				if err != nil {
+					fmt.Println("Error writing to connection:", err)
+					return
+				}
+			} 
+		} else if state_client == 2 {
+			fmt.Println("State 2")
+			for _, pokemon := range player.Pokemons {
+				fmt.Println(pokemon.Name)
 			}
-			// send
-		} else if state == 2 {
-			fmt.Println("Choose your pokemon to play first")
-			for i, pokemon := range player.Pokemons {
-				fmt.Println(i, pokemon.Name)
-			}
-			var index int
-			fmt.Scanln(&index)
-			poke = player.Pokemons[index]
-			// send
-			_, err := conn.Write([]byte("state:2:"+poke.Name))
-			if err != nil {
-				fmt.Println("Error writing to connection:", err)
-				return
-			}
+			var choice int
+			fmt.Println("Choose the pokemon to fight")
+			fmt.Scan(&choice)
+			// send the attack power of the pokemon to the client
+
+			atk, isNormalAttack := randomMove(player.Pokemons[choice])
+			if isNormalAttack {
+				_, err := conn.Write([]byte("normalAttak:"+strconv.Itoa(int(atk))))
+				if err != nil {
+					fmt.Println("Error writing to connection:", err)
+					return
+				}
+			} else {
+				_, err := conn.Write([]byte("specialAttack:"+strconv.FormatFloat(atk, 'f', 6, 64)))
+				if err != nil {
+					fmt.Println("Error writing to connection:", err)
+					return
+				}
+			} 
+
+		}
+		
+	}
+}
+
+// find the fastest pokemon
+func fastestPokemon(pokemons []Pokemon) Pokemon {
+	fastest := pokemons[0]
+	for _, pokemon := range pokemons {
+		if pokemon.Speed > fastest.Speed {
+			fastest = pokemon
+		}
+	}
+	return fastest
+}
+
+func handleConnection(conn net.Conn, player Player) {
+	defer conn.Close()
+	state := 0
+	time.Sleep(1 * time.Second)
+	for {
+		if state == 0 {
+			// Read the incoming connection
 			buffer := make([]byte, 1024)
-			n, err := conn.Read(buffer)
+			fmt.Println("Waiting for message")
+			n, err :=conn.Read(buffer)
 			if err != nil {
 				fmt.Println("Error reading from connection:", err)
 				return
 			}
 			fmt.Println("Received:", string(buffer[:n]))
+			mess, _ := strconv.Atoi(string(buffer[:n]))
+			// check if the fastest pokemon is faster than the received message
+			fastest := fastestPokemon(player.Pokemons)
+			max := fastest.Speed
+			if max > mess {
+				state = 1
+			} else {
+				state = 2
+			}
+			fmt.Println("Sending state:", state)
+			//send the state to the client
+			_, err = conn.Write([]byte(strconv.Itoa(state)))
+			if err != nil {
+				fmt.Println("Error writing to connection:", err)
+				return
+			}
+			time.Sleep(1 * time.Second)
+		} else if state == 1 {
+			fmt.Println("State 1======")
+			// player choose the pokemon to fight
+			// send the pokemon to the client
+			for _, pokemon := range player.Pokemons {
+				fmt.Println(pokemon.Name)
+			}
+			var choice int
+			fmt.Println("Choose the pokemon to fight")
+			fmt.Scan(&choice)
+			// send the attack power of the pokemon to the client
+
+			atk, isNormalAttack := randomMove(player.Pokemons[choice])
+			if isNormalAttack {
+				_, err := conn.Write([]byte("normalAttak:"+strconv.Itoa(int(atk))))
+				fmt.Println("Normal Attacked")
+				if err != nil {
+					fmt.Println("Error writing to connection:", err)
+					return
+				}
+			} else {
+				attack := int(atk)
+				fmt.Println("Special Attacked")
+				_, err := conn.Write([]byte("specialAttack:"+strconv.Itoa(attack)))
+				if err != nil {
+					fmt.Println("Error writing to connection:", err)
+					return
+				}
+			} 
+			// Read the server's response
+			buffer := make([]byte, 1024)
+			_, err := conn.Read(buffer)
+			if err != nil {
+				fmt.Println("Error reading from server:", err)
+				return
+			}
+			fmt.Println("Received:", string(buffer))
+			fmt.Println("Her")
+			// state, _ = strconv.Atoi(string(buffer))
+			fmt.Println("Her2")
+			// state =1
+			time.Sleep(1 * time.Second)
+		} else if state == 2 {
+			fmt.Println("State 2")
+
 		}
+	}
+	
+}
+
+func randomMove(poke Pokemon) (float64, bool) {
+	rand.New(rand.NewSource(time.Now().UnixNano()))
+	if rand.Intn(2) == 0 {
+		normalAttack := poke.Attack
+		return float64(normalAttack), false
+	} else {
+		specialAttack := float64(poke.SpecialAttack)*poke.ElementalMultiplier
+		return specialAttack, true
 	}
 }
 
